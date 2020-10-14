@@ -1,10 +1,13 @@
 # Dew Lover
 A repository keeping the code for part of the work of Kiehart lab
 
+## Goal of this repo:
+- Keep a documentation of how we do everything, so that we can spot obvious errors, and students after us can have a place to resume the research.
+
 ## Softwares used (from Hector's paper):
 - [GATK](https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1) 
 - [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 
-- [BBMap and BBDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) 
+- [BBMap and BDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) 
 - [BWA](http://bio-bwa.sourceforge.net/) 
 - [Picard Tools](http://broadinstitute.github.io/picard)
 - [SAMTools](http://www.htslib.org/)
@@ -21,6 +24,8 @@ A repository keeping the code for part of the work of Kiehart lab
 - [Mega collection of bioinformatics resources](https://github.com/jdidion/biotools)
 - [PacBio Bioinformatics Training Wiki](https://github.com/PacificBiosciences/Bioinformatics-Training/wiki)
 - [Other ways to run a process in the background](https://linuxize.com/post/how-to-run-linux-commands-in-background/)
+- [Using && and || operators to tell if process finished successfully](https://unix.stackexchange.com/questions/24684/confusing-use-of-and-operators)
+- [More on Linux error codes](https://shapeshed.com/unix-exit-codes/)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
