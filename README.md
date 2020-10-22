@@ -1,8 +1,22 @@
 # Dew Lover
-A repository keeping the code for part of the work of Kiehart lab
+A repository keeping the code for part of the work of Kiehart lab.
 
 ## Goal of this repo:
-- Keep a documentation of how we do everything, so that we can spot obvious errors, and students after us can have a place to resume the research.
+To keep a documentation of how everything is done, so that we can reproduce everything, may it be good or bad, and future student researchers can have a place to resume the research from.
+
+This repository will be kept public so that anyone who needs it can find it. 
+
+## How to use this repo
+- This repo is public, so do not put sensitive information in this repo. Use `.gitignore` to hide it if necessary.
+- Update the last section of this README whenever something is changed on the RAPID VM.
+- Toss in potentially useful information related to this project or bioinformatics overall. 
+
+## Things to go over with Hector on Friday
+1. Key-based SSH login
+2. Setting up VS Code for working with a remote machine
+3. Basic Git usage (and see how `git push` works with someone else's computer)
+4. Basic Linux navigation
+5. Basic Markdown syntax
 
 ## Softwares used (from Hector's paper):
 - [GATK](https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1) 
@@ -29,6 +43,7 @@ A repository keeping the code for part of the work of Kiehart lab
 - [Using && and || operators to tell if process finished successfully](https://unix.stackexchange.com/questions/24684/confusing-use-of-and-operators)
 - [More on Linux error codes](https://shapeshed.com/unix-exit-codes/)
 - [Using GATK with Docker](https://gatk.broadinstitute.org/hc/en-us/articles/360035889991)
+- [Key-based SSH login](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) and [using remote servers with VS Code](https://code.visualstudio.com/docs/remote/ssh#_getting-started)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -41,4 +56,4 @@ A repository keeping the code for part of the work of Kiehart lab
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
-- (10/21/2020) Added alias `dpsa` as an alias to a shortened version of `docker ps -a` following [this blog](https://theforgetful.dev/posts/docker-ps-output-too-wide/).
+- (10/21/2020) Added alias `dpsa` to `~/.profile` to do shortened version of `docker ps -a` following [this blog](https://theforgetful.dev/posts/docker-ps-output-too-wide/).
