@@ -11,6 +11,7 @@ A repository keeping the code for part of the work of Kiehart lab
 - [BWA](http://bio-bwa.sourceforge.net/) 
 - [Picard Tools](http://broadinstitute.github.io/picard)
 - [SAMTools](http://www.htslib.org/)
+- [Docker Tutorial](https://docker-curriculum.com/)
 
 ## Interesting commands and webpages
 - [Common Linux commands](https://help.ubuntu.com/community/UsingTheTerminal) and [all-in-one collection of shortcuts](https://kapeli.com/cheat_sheets/Bash_Shortcuts.docset/Contents/Resources/Documents/index)
@@ -27,6 +28,7 @@ A repository keeping the code for part of the work of Kiehart lab
 - [Other ways to run a process in the background](https://linuxize.com/post/how-to-run-linux-commands-in-background/)
 - [Using && and || operators to tell if process finished successfully](https://unix.stackexchange.com/questions/24684/confusing-use-of-and-operators)
 - [More on Linux error codes](https://shapeshed.com/unix-exit-codes/)
+- [Using GATK with Docker](https://gatk.broadinstitute.org/hc/en-us/articles/360035889991)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -35,3 +37,8 @@ A repository keeping the code for part of the work of Kiehart lab
 - [x] ~~Set up [Slurm](https://slurm.schedmd.com/) or ask the IT folks about the best practice to manage jobs on Linux (because Slurm might be an overkill)~~ Just use `screen` instead.
 - [x] Ask the IT folks for a "best practices" of lab computers in general
 - [ ] [Terra](https://app.terra.bio/#library/showcase), a site to see the showcases of GATK
+- [ ] Consider using [Docker](https://www.infoworld.com/article/3310941/why-you-should-use-docker-and-containers.html) to isolate the App
+
+# DONE list
+- (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
+- (10/21/2020) Added alias `dpsa` as an alias to a shortened version of `docker ps -a` following [this blog](https://theforgetful.dev/posts/docker-ps-output-too-wide/).
