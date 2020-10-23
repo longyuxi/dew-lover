@@ -19,13 +19,22 @@ This repository will be kept public so that anyone who needs it can find it.
 5. Basic Markdown syntax
 
 ## Softwares used (from Hector's paper):
-- [GATK](https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1) 
-- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 
+
+- [GATK](https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1) and [their instructions for the Docker route](https://gatk.broadinstitute.org/hc/en-us/articles/360035889991): (from website) Developed in the Data Sciences Platform at the Broad Institute, the toolkit offers a wide variety of tools with a primary focus on variant discovery and genotyping. Its powerful processing engine and high-performance computing features make it capable of taking on projects of any size.
+
+- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/): (from README) FastQC is an application which takes a FastQ file and runs a series of tests on it to generate a comprehensive QC report.  This will tell you if there is anything unusual about your sequence. 
+
 - [BBMap and BDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) 
+
 - [BWA](http://bio-bwa.sourceforge.net/) 
 - [Picard Tools](http://broadinstitute.github.io/picard)
 - [SAMTools](http://www.htslib.org/)
-- [Docker Tutorial](https://docker-curriculum.com/)
+
+
+## Important commands:
+- Run GATK Docker image: `docker run -it broadinstitute/gatk`
+- Run GATK with the `dew-lover` folder mounted in its root directory: `docker run -v /home/rapiduser/dew-lover:/dew-lover -it broadinstitute/gatk`
+- Use `screen` before doing anything so that you can keep it running in the background independently. `screen` or `screen -S session_name` to create a new screen, `CTRL + A, D` to detach from screen, `screen -r session_name` or just `screen -r` to attach to a screen.  
 
 ## Interesting commands and webpages
 - [Common Linux commands](https://help.ubuntu.com/community/UsingTheTerminal) and [all-in-one collection of shortcuts](https://kapeli.com/cheat_sheets/Bash_Shortcuts.docset/Contents/Resources/Documents/index)
@@ -44,6 +53,7 @@ This repository will be kept public so that anyone who needs it can find it.
 - [More on Linux error codes](https://shapeshed.com/unix-exit-codes/)
 - [Using GATK with Docker](https://gatk.broadinstitute.org/hc/en-us/articles/360035889991)
 - [Key-based SSH login](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) and [using remote servers with VS Code](https://code.visualstudio.com/docs/remote/ssh#_getting-started)
+- [Docker Tutorial](https://docker-curriculum.com/)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -57,3 +67,7 @@ This repository will be kept public so that anyone who needs it can find it.
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
 - (10/21/2020) Added alias `dpsa` to `~/.profile` to do shortened version of `docker ps -a` following [this blog](https://theforgetful.dev/posts/docker-ps-output-too-wide/).
+- (10/23/2020) Downloaded and extracted FastQC v0.11.9 to ~
+- (10/23/2020) Downloaded and extracted BBMap 38.87 to ~
+- (10/23/2020) Downloaded and extracted bwa-0.7.17 to ~
+- (10/23/2020) Downloaded, built samtools, bcftools and htslib 1.11 and added their bin folder to $PATH.
