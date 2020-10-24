@@ -112,3 +112,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (10/23/2020) Downloaded and extracted BBMap 38.87 to ~
 - (10/23/2020) Downloaded and extracted bwa-0.7.17 to ~
 - (10/23/2020) Downloaded, built samtools, bcftools and htslib 1.11 and added their bin folder to $PATH.
+- (10/23/2020) Uploaded Hector's paper.
