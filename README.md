@@ -49,8 +49,11 @@ This repository will be kept public so that anyone who needs it can find it.
 
 ### What to check if you suddenly can't connect to it one day
 - That you are either under the DukeBlue or you are connect to the VPN
+
 - That the virtual machine is turned on
+
 - That you didn't accidentally move the folder that contains the SSH key.
+
 - That the `ssh -i ... ...@...` command still works in your terminal.
 
 
@@ -64,17 +67,25 @@ This repository will be kept public so that anyone who needs it can find it.
 - [BBMap and BDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) 
 
 - [BWA](http://bio-bwa.sourceforge.net/) 
+
 - [Picard Tools](http://broadinstitute.github.io/picard)
+
 - [SAMTools](http://www.htslib.org/)
 
 
 ## Important commands:
 - Run GATK Docker image: `docker run -it broadinstitute/gatk`
+
 - Run GATK with the `dew-lover` folder mounted in its root directory: `docker run -v /home/rapiduser/dew-lover:/dew-lover -it broadinstitute/gatk`
+
 - Use `screen` before doing anything so that you can keep it running in the background independently. 
+
     - `screen` or `screen -S session_name` to create a new screen, 
-    - `CTRL + A, D` to detach from screen, 
+
+    - `CTRL + A, D` to detach from screen,
+
     - `screen -ls` to list all screens, 
+
     - `screen -r session_name` or just `screen -r` to attach to a screen.  
 
 ## Interesting commands and webpages
