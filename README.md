@@ -105,16 +105,13 @@ This repository will be kept public so that anyone who needs it can find it.
 - [More on Linux error codes](https://shapeshed.com/unix-exit-codes/)
 - [Using GATK with Docker](https://gatk.broadinstitute.org/hc/en-us/articles/360035889991)
 - [Key-based SSH login](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) and [using remote servers with VS Code](https://code.visualstudio.com/docs/remote/ssh#_getting-started)
+
 - [Docker Tutorial](https://docker-curriculum.com/)
+
+- [Terra](https://app.terra.bio/#library/showcase), a site to see the showcases of GATK
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
-- [ ] Set up the environment on the research toolkit
-- [ ] Ask Hector if we should upload his research paper to this repo
-- [x] ~~Set up [Slurm](https://slurm.schedmd.com/) or ask the IT folks about the best practice to manage jobs on Linux (because Slurm might be an overkill)~~ Just use `screen` instead.
-- [x] Ask the IT folks for a "best practices" of lab computers in general
-- [ ] [Terra](https://app.terra.bio/#library/showcase), a site to see the showcases of GATK
-- [ ] Consider using [Docker](https://www.infoworld.com/article/3310941/why-you-should-use-docker-and-containers.html) to isolate the App
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
