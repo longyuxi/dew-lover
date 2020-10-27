@@ -122,4 +122,6 @@ This repository will be kept public so that anyone who needs it can find it.
 - (10/23/2020) Downloaded, built samtools, bcftools and htslib 1.11 and added their bin folder to $PATH.
 - (10/23/2020) Uploaded Hector's paper.
 - (10/24/2020) Included VS Code tutorial to connect to VM
-- (10/24/2020) Moved all the tools to the Git repository. Might consider deleting the source file and only keep the executables if we run out of space in this repository. 
+- (10/24/2020) Moved all the tools to the Git repository. Might consider deleting the source file and only keep the executables if we run out of space in this repository.
+- (10/27/2020) Hector uploaded all the data into the Data folder. 
+- (10/27/2020) Added data/* to .gitignore. Also added a generate_file_tree.sh that can generate a directory tree file for the data folder. 
