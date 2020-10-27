@@ -10,6 +10,7 @@ This repository will be kept public so that anyone who needs it can find it.
 - This repo is public, so do not put sensitive information in this repo. Use `.gitignore` to hide it if necessary.
 - Update the last section of this README whenever something is changed on the RAPID VM.
 - Toss in potentially useful information related to this project or bioinformatics overall. 
+- There's a `data` folder that is set to be ignored by Git. Use `bash generate_file_tree.sh` to generate a tree of it every time something new is uploaded.
 
 ## Things to go over with Hector eventually
 1. Key-based SSH login (done)
