@@ -113,6 +113,9 @@ This repository will be kept public so that anyone who needs it can find it.
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
+- [ ] Research the zip.xlsx file especially.
+- [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
+- [ ] Research what every output is.
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
