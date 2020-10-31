@@ -19,7 +19,7 @@ This repository will be kept public so that anyone who needs it can find it.
 4. Basic Linux navigation
 5. Basic Markdown syntax
 
-## Getting started with using the RAPID VM with key-based login and Visual Studio Code
+## Detailed instructions for getting started with using the Duke RAPID VM with key-based login and Visual Studio Code
 
 1. Make sure the machine is powered on by going to the [research toolkit's website](https://rtoolkits.web.duke.edu/home/login), navigate to our project, click the button next to our machine and click the "power on" button on the top if necessary.
 
@@ -129,3 +129,5 @@ This repository will be kept public so that anyone who needs it can find it.
 - (10/24/2020) Moved all the tools to the Git repository. Might consider deleting the source file and only keep the executables if we run out of space in this repository.
 - (10/27/2020) Hector uploaded all the data into the Data folder. 
 - (10/27/2020) Added data/* to .gitignore. Also added a generate_file_tree.sh that can generate a directory tree file for the data folder. 
+- (10/30/2020) Compiled BWA
+- (10/30/2020) Tried doing alignment on some files in the data repository. Found that some files might be corrupt.

@@ -15,6 +15,15 @@
 │   │   ├── Gal4_reference.txt.bwt
 │   │   ├── Gal4_reference.txt.pac
 │   │   ├── Gal4_reference.txt.sa
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.dict
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.amb
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.ann
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.bwt
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.fai
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.pac
+│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.sa
+│   │   ├── LE-Gal4.sam
 │   │   ├── Pey-15.g.vcf
 │   │   ├── Pey-15.g.vcf.idx
 │   │   ├── Pey-15_MD.bam.bai
@@ -41,6 +50,7 @@
 │   │   ├── Pey-8_MDM.txt
 │   │   ├── Pey-8_MDRG.bam.bai
 │   │   ├── Protein BCA 1_31_2020 4_57_27 PM.txt
+│   │   ├── test_zip.sam
 │   │   ├── zip-14b.g.vcf
 │   │   ├── zip-14b.g.vcf.idx
 │   │   ├── zip-14b_MD.bam.bai
@@ -4450,8 +4460,11 @@
     ├── bwa-0.7.17
     │   ├── bamlite.c
     │   ├── bamlite.h
+    │   ├── bamlite.o
     │   ├── bntseq.c
     │   ├── bntseq.h
+    │   ├── bntseq.o
+    │   ├── bwa
     │   ├── bwa.1
     │   ├── bwa.c
     │   ├── bwa.h
@@ -4466,63 +4479,97 @@
     │   │   └── typeHLA.sh
     │   ├── bwamem.c
     │   ├── bwamem_extra.c
+    │   ├── bwamem_extra.o
     │   ├── bwamem.h
+    │   ├── bwamem.o
     │   ├── bwamem_pair.c
+    │   ├── bwamem_pair.o
+    │   ├── bwa.o
     │   ├── bwape.c
+    │   ├── bwape.o
     │   ├── bwase.c
     │   ├── bwase.h
+    │   ├── bwase.o
     │   ├── bwaseqio.c
+    │   ├── bwaseqio.o
     │   ├── bwashm.c
+    │   ├── bwashm.o
     │   ├── bwtaln.c
     │   ├── bwtaln.h
+    │   ├── bwtaln.o
     │   ├── bwt.c
     │   ├── bwtgap.c
     │   ├── bwtgap.h
+    │   ├── bwtgap.o
     │   ├── bwt_gen.c
+    │   ├── bwt_gen.o
     │   ├── bwt.h
     │   ├── bwtindex.c
+    │   ├── bwtindex.o
     │   ├── bwt_lite.c
     │   ├── bwt_lite.h
+    │   ├── bwt_lite.o
+    │   ├── bwt.o
     │   ├── bwtsw2_aux.c
+    │   ├── bwtsw2_aux.o
     │   ├── bwtsw2_chain.c
+    │   ├── bwtsw2_chain.o
     │   ├── bwtsw2_core.c
+    │   ├── bwtsw2_core.o
     │   ├── bwtsw2.h
     │   ├── bwtsw2_main.c
+    │   ├── bwtsw2_main.o
     │   ├── bwtsw2_pair.c
+    │   ├── bwtsw2_pair.o
     │   ├── ChangeLog
     │   ├── COPYING
     │   ├── example.c
     │   ├── fastmap.c
+    │   ├── fastmap.o
     │   ├── is.c
+    │   ├── is.o
     │   ├── kbtree.h
     │   ├── khash.h
     │   ├── kopen.c
+    │   ├── kopen.o
     │   ├── kseq.h
     │   ├── ksort.h
     │   ├── kstring.c
     │   ├── kstring.h
+    │   ├── kstring.o
     │   ├── ksw.c
     │   ├── ksw.h
+    │   ├── ksw.o
     │   ├── kthread.c
+    │   ├── kthread.o
     │   ├── kvec.h
+    │   ├── libbwa.a
     │   ├── main.c
+    │   ├── main.o
     │   ├── Makefile
     │   ├── malloc_wrap.c
     │   ├── malloc_wrap.h
+    │   ├── malloc_wrap.o
     │   ├── maxk.c
+    │   ├── maxk.o
     │   ├── NEWS.md
     │   ├── pemerge.c
+    │   ├── pemerge.o
     │   ├── QSufSort.c
     │   ├── QSufSort.h
+    │   ├── QSufSort.o
     │   ├── qualfa2fq.pl
     │   ├── README-alt.md
     │   ├── README.md
     │   ├── rle.c
     │   ├── rle.h
+    │   ├── rle.o
     │   ├── rope.c
     │   ├── rope.h
+    │   ├── rope.o
     │   ├── utils.c
     │   ├── utils.h
+    │   ├── utils.o
     │   └── xa2multi.pl
     ├── FastQC
     │   ├── cisd-jhdf5.jar
@@ -6496,4 +6543,4 @@
         ├── version.h
         └── version.sh
 
-261 directories, 6235 files
+261 directories, 6282 files
