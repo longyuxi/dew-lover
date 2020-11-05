@@ -1,103 +1,21 @@
 .
 ├── data
 │   ├── Alignments
-│   │   ├── ES1_reference.dict
-│   │   ├── ES1_reference.txt
-│   │   ├── ES1_reference.txt.amb
-│   │   ├── ES1_reference.txt.ann
-│   │   ├── ES1_reference.txt.bwt
-│   │   ├── ES1_reference.txt.fai
-│   │   ├── ES1_reference.txt.pac
-│   │   ├── ES1_reference.txt.sa
-│   │   ├── Gal4_reference.txt
-│   │   ├── Gal4_reference.txt.amb
-│   │   ├── Gal4_reference.txt.ann
-│   │   ├── Gal4_reference.txt.bwt
-│   │   ├── Gal4_reference.txt.pac
-│   │   ├── Gal4_reference.txt.sa
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.dict
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.amb
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.ann
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.bwt
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.fai
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.pac
-│   │   ├── GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.sa
 │   │   ├── LE-Gal4.sam
-│   │   ├── Pey-15.g.vcf
-│   │   ├── Pey-15.g.vcf.idx
-│   │   ├── Pey-15_MD.bam.bai
-│   │   ├── Pey-15_MDM.txt
-│   │   ├── Pey-15_MDRG.bam.bai
-│   │   ├── Pey-2.g.vcf
-│   │   ├── Pey-2.g.vcf.idx
-│   │   ├── Pey-2_MD.bam.bai
-│   │   ├── Pey-2_MDM.txt
-│   │   ├── Pey-2_MDRG.bam.bai
-│   │   ├── Pey-3.g.vcf
-│   │   ├── Pey-3.g.vcf.idx
-│   │   ├── Pey-3_MD.bam.bai
-│   │   ├── Pey-3_MDM.txt
-│   │   ├── Pey-3_MDRG.bam.bai
-│   │   ├── Pey-5.g.vcf
-│   │   ├── Pey-5.g.vcf.idx
-│   │   ├── Pey-5_MD.bam.bai
-│   │   ├── Pey-5_MDM.txt
-│   │   ├── Pey-5_MDRG.bam.bai
-│   │   ├── Pey-8.g.vcf
-│   │   ├── Pey-8.g.vcf.idx
-│   │   ├── Pey-8_MD.bam.bai
-│   │   ├── Pey-8_MDM.txt
-│   │   ├── Pey-8_MDRG.bam.bai
-│   │   ├── Protein BCA 1_31_2020 4_57_27 PM.txt
-│   │   ├── test_zip.sam
-│   │   ├── zip-14b.g.vcf
-│   │   ├── zip-14b.g.vcf.idx
-│   │   ├── zip-14b_MD.bam.bai
-│   │   ├── zip-14b_MDM.txt
-│   │   ├── zip-14b_MDRG.bam.bai
-│   │   ├── zip1_6.g.vcf
-│   │   ├── zip1_6.g.vcf.idx
-│   │   ├── zip1_6_MD.bam.bai
-│   │   ├── zip1_6_MDM.txt
-│   │   ├── zip1_6_MDRG.bam.bai
-│   │   ├── zip1.g.vcf
-│   │   ├── zip1.g.vcf.idx
-│   │   ├── zip1_MD.bam.bai
-│   │   ├── zip1_MDM.txt
-│   │   ├── zip1_MDRG.bam.bai
-│   │   ├── zip2.txt
-│   │   ├── zip-3_12.g.vcf
-│   │   ├── zip-3_12.g.vcf.idx
-│   │   ├── zip-3_12_MD.bam.bai
-│   │   ├── zip-3_12_MDM.txt
-│   │   ├── zip-3_12_MDRG.bam.bai
-│   │   ├── zip-3_9.g.vcf
-│   │   ├── zip-3_9.g.vcf.idx
-│   │   ├── zip-3_9_MD.bam.bai
-│   │   ├── zip-3_9_MDM.txt
-│   │   ├── zip-3_9_MDRG.bam.bai
-│   │   ├── zip_ext_reference.dict
-│   │   ├── zip_ext_reference.txt
-│   │   ├── zip_ext_reference.txt.amb
-│   │   ├── zip_ext_reference.txt.ann
-│   │   ├── zip_ext_reference.txt.bwt
-│   │   ├── zip_ext_reference.txt.fai
-│   │   ├── zip_ext_reference.txt.pac
-│   │   ├── zip_ext_reference.txt.sa
-│   │   ├── zip_reference.dict
-│   │   ├── zip_reference.txt
-│   │   ├── zip_reference.txt.amb
-│   │   ├── zip_reference.txt.ann
-│   │   ├── zip_reference.txt.bwt
-│   │   ├── zip_reference.txt.fai
-│   │   ├── zip_reference.txt.pac
-│   │   ├── zip_reference.txt.sa
-│   │   ├── zip_results.txt
-│   │   ├── zip.txt
-│   │   ├── zip.vcf
-│   │   ├── zip.vcf.idx
+│   │   ├── whole_genome.dict
+│   │   ├── whole_genome.fna
+│   │   ├── whole_genome.fna.amb
+│   │   ├── whole_genome.fna.ann
+│   │   ├── whole_genome.fna.bwt
+│   │   ├── whole_genome.fna.fai
+│   │   ├── whole_genome.fna.pac
+│   │   ├── whole_genome.fna.sa
 │   │   └── zip.xlsx
+│   ├── Raw_Data
+│   │   ├── LE-Gal4_S11_L002_R1_001.fastq.gz
+│   │   ├── LE-Gal4_S11_L002_R2_001.fastq.gz
+│   │   ├── PAS-Gal4_S12_L002_R1_001.fastq.gz
+│   │   └── PAS-Gal4_S12_L002_R2_001.fastq.gz
 │   ├── ref
 │   │   ├── genome
 │   │   │   └── 1
@@ -109,90 +27,56 @@
 │   │       └── 1
 │   │           ├── chr1_index_k13_c15_b1.block
 │   │           └── chr1_index_k13_c15_b1.block2.gz
-│   ├── Summer2019_MiSeqData
-│   │   ├── Crawford_5814_190809A6.checksum
-│   │   ├── LE-Gal4_S11_L002_R1_001.fastq.gz
-│   │   ├── LE-Gal4_S11_L002_R2_001.fastq.gz
-│   │   ├── PAS-Gal4_S12_L002_R1_001.fastq.gz
-│   │   ├── PAS-Gal4_S12_L002_R2_001.fastq.gz
-│   │   ├── Pey-15_S10_L002_R1_001.fastq.gz
-│   │   ├── Pey-15_S10_L002_R2_001.fastq.gz
-│   │   ├── Pey-2_8_S6_L002_R1_001.fastq.gz
-│   │   ├── Pey-2_8_S6_L002_R2_001.fastq.gz
-│   │   ├── Pey-3_7_S7_L002_R1_001.fastq.gz
-│   │   ├── Pey-3_7_S7_L002_R2_001.fastq.gz
-│   │   ├── Pey-5_7_S8_L002_R1_001.fastq.gz
-│   │   ├── Pey-5_7_S8_L002_R2_001.fastq.gz
-│   │   ├── Pey-8_S9_L002_R1_001.fastq.gz
-│   │   ├── Pey-8_S9_L002_R2_001.fastq.gz
-│   │   ├── README.rtf
-│   │   ├── zip-14b_S5_L002_R1_001.fastq.gz
-│   │   ├── zip-14b_S5_L002_R2_001.fastq.gz
-│   │   ├── zip1_6_S2_L002_R1_001.fastq.gz
-│   │   ├── zip1_6_S2_L002_R2_001.fastq
-│   │   ├── zip1_6_S2_L002_R2_001.fastq.gz
-│   │   ├── zip1_S1_L002_R1_001.fastq.gz
-│   │   ├── zip1_S1_L002_R2_001.fastq.gz
-│   │   ├── zip-3_12_S3_L002_R1_001.fastq.gz
-│   │   ├── zip-3_12_S3_L002_R2_001.fastq.gz
-│   │   ├── zip-3_9_S4_L002_R1_001.fastq.gz
-│   │   └── zip-3_9_S4_L002_R2_001.fastq.gz
-│   ├── zip
-│   │   ├── 2R:24990570..25011965$1$21396
-│   │   │   ├── __76301A2B-DB9E-4E37-AC6C-4DDF14E806B6123145504169984_1575330147687
-│   │   │   │   ├── AD.tdb
-│   │   │   │   ├── AD_var.tdb
-│   │   │   │   ├── ALT.tdb
-│   │   │   │   ├── ALT_var.tdb
-│   │   │   │   ├── BaseQRankSum.tdb
-│   │   │   │   ├── __book_keeping.tdb.gz
-│   │   │   │   ├── __coords.tdb
-│   │   │   │   ├── DP_FORMAT.tdb
-│   │   │   │   ├── DP.tdb
-│   │   │   │   ├── DS.tdb
-│   │   │   │   ├── END.tdb
-│   │   │   │   ├── ExcessHet.tdb
-│   │   │   │   ├── FILTER.tdb
-│   │   │   │   ├── FILTER_var.tdb
-│   │   │   │   ├── GQ.tdb
-│   │   │   │   ├── GT.tdb
-│   │   │   │   ├── GT_var.tdb
-│   │   │   │   ├── ID.tdb
-│   │   │   │   ├── ID_var.tdb
-│   │   │   │   ├── InbreedingCoeff.tdb
-│   │   │   │   ├── MIN_DP.tdb
-│   │   │   │   ├── MLEAC.tdb
-│   │   │   │   ├── MLEAC_var.tdb
-│   │   │   │   ├── MLEAF.tdb
-│   │   │   │   ├── MLEAF_var.tdb
-│   │   │   │   ├── MQRankSum.tdb
-│   │   │   │   ├── PGT.tdb
-│   │   │   │   ├── PGT_var.tdb
-│   │   │   │   ├── PID.tdb
-│   │   │   │   ├── PID_var.tdb
-│   │   │   │   ├── PL.tdb
-│   │   │   │   ├── PL_var.tdb
-│   │   │   │   ├── PS.tdb
-│   │   │   │   ├── QUAL.tdb
-│   │   │   │   ├── RAW_MQandDP.tdb
-│   │   │   │   ├── ReadPosRankSum.tdb
-│   │   │   │   ├── REF.tdb
-│   │   │   │   ├── REF_var.tdb
-│   │   │   │   ├── SB.tdb
-│   │   │   │   └── __tiledb_fragment.tdb
-│   │   │   ├── __array_schema.tdb
-│   │   │   └── genomicsdb_meta_dir
-│   │   │       └── genomicsdb_meta_5BB24A96-3952-4DAB-9054-C12148870E47.json
-│   │   ├── callset.json
-│   │   ├── __tiledb_workspace.tdb
-│   │   ├── vcfheader.vcf
-│   │   └── vidmap.json
-│   ├── zip_reference.txt
-│   ├── zip_reference.txt.amb
-│   ├── zip_reference.txt.ann
-│   ├── zip_reference.txt.bwt
-│   ├── zip_reference.txt.pac
-│   └── zip_reference.txt.sa
+│   └── zip
+│       ├── 2R:24990570..25011965$1$21396
+│       │   ├── __76301A2B-DB9E-4E37-AC6C-4DDF14E806B6123145504169984_1575330147687
+│       │   │   ├── AD.tdb
+│       │   │   ├── AD_var.tdb
+│       │   │   ├── ALT.tdb
+│       │   │   ├── ALT_var.tdb
+│       │   │   ├── BaseQRankSum.tdb
+│       │   │   ├── __book_keeping.tdb.gz
+│       │   │   ├── __coords.tdb
+│       │   │   ├── DP_FORMAT.tdb
+│       │   │   ├── DP.tdb
+│       │   │   ├── DS.tdb
+│       │   │   ├── END.tdb
+│       │   │   ├── ExcessHet.tdb
+│       │   │   ├── FILTER.tdb
+│       │   │   ├── FILTER_var.tdb
+│       │   │   ├── GQ.tdb
+│       │   │   ├── GT.tdb
+│       │   │   ├── GT_var.tdb
+│       │   │   ├── ID.tdb
+│       │   │   ├── ID_var.tdb
+│       │   │   ├── InbreedingCoeff.tdb
+│       │   │   ├── MIN_DP.tdb
+│       │   │   ├── MLEAC.tdb
+│       │   │   ├── MLEAC_var.tdb
+│       │   │   ├── MLEAF.tdb
+│       │   │   ├── MLEAF_var.tdb
+│       │   │   ├── MQRankSum.tdb
+│       │   │   ├── PGT.tdb
+│       │   │   ├── PGT_var.tdb
+│       │   │   ├── PID.tdb
+│       │   │   ├── PID_var.tdb
+│       │   │   ├── PL.tdb
+│       │   │   ├── PL_var.tdb
+│       │   │   ├── PS.tdb
+│       │   │   ├── QUAL.tdb
+│       │   │   ├── RAW_MQandDP.tdb
+│       │   │   ├── ReadPosRankSum.tdb
+│       │   │   ├── REF.tdb
+│       │   │   ├── REF_var.tdb
+│       │   │   ├── SB.tdb
+│       │   │   └── __tiledb_fragment.tdb
+│       │   ├── __array_schema.tdb
+│       │   └── genomicsdb_meta_dir
+│       │       └── genomicsdb_meta_5BB24A96-3952-4DAB-9054-C12148870E47.json
+│       ├── callset.json
+│       ├── __tiledb_workspace.tdb
+│       ├── vcfheader.vcf
+│       └── vidmap.json
 ├── data_file_tree.txt
 ├── generate_file_tree.sh
 ├── LICENSE
@@ -6543,4 +6427,4 @@
         ├── version.h
         └── version.sh
 
-261 directories, 6282 files
+261 directories, 6166 files
