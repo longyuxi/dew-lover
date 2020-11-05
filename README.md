@@ -111,6 +111,10 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Terra](https://app.terra.bio/#library/showcase), a site to see the showcases of GATK
 
+- [Tutorial for mounting a Duke Data Commons Storage](https://oit.duke.edu/help/articles/kb0026376)
+
+- [More Tutorial on mounting a CIFS Share on Linux](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/)
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Research the zip.xlsx file especially.
@@ -131,3 +135,5 @@ This repository will be kept public so that anyone who needs it can find it.
 - (10/27/2020) Added data/* to .gitignore. Also added a generate_file_tree.sh that can generate a directory tree file for the data folder. 
 - (10/30/2020) Compiled BWA
 - (10/30/2020) Tried doing alignment on some files in the data repository. Found that some files might be corrupt.
+- (11/4/2020) Found out that indeed the files were incompletely uploaded. Also found that the storage might not be enough for all our data. 
+- (11/5/2020) Janice contacted the OIT people about adding more storage and they got us some free storage using CIFS through Duke Data Commons.
