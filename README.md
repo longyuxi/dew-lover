@@ -139,3 +139,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (10/30/2020) Tried doing alignment on some files in the data repository. Found that some files might be corrupt.
 - (11/4/2020) Found out that indeed the files were incompletely uploaded. Also found that the storage might not be enough for all our data. 
 - (11/5/2020) Janice contacted the OIT people about adding more storage and they got us some free storage using CIFS through Duke Data Commons.
+- (11/6/2020) Enabled auto mounting the data commons storage by following this [tutorial](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/) editing the `/etc/fstab`. The 1st, 2nd and 3rd storage scratch spaces are mounted to `/dew-lover/mount/1`, `2` and `3` respectively.
