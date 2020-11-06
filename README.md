@@ -115,6 +115,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [More Tutorial on mounting a CIFS Share on Linux](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/)
 
+- [Documentation for the VCF format](http://samtools.github.io/hts-specs/VCFv4.3.pdf)
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Research the zip.xlsx file especially.
