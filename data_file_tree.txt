@@ -1,6 +1,7 @@
 .
 ├── data
 │   ├── Alignments
+│   │   ├── LE-Gal4.bam
 │   │   ├── LE-Gal4.sam
 │   │   ├── whole_genome.dict
 │   │   ├── whole_genome.fna
@@ -80,6 +81,12 @@
 ├── data_file_tree.txt
 ├── generate_file_tree.sh
 ├── LICENSE
+├── mount
+│   ├── 1
+│   │   ├── test2.txt
+│   │   └── test.txt
+│   ├── 2
+│   └── 3
 ├── README.md
 └── tools
     ├── bbmap
@@ -6427,4 +6434,4 @@
         ├── version.h
         └── version.sh
 
-261 directories, 6166 files
+265 directories, 6169 files
