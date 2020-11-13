@@ -57,7 +57,12 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - That the `ssh -i ... ...@...` command still works in your terminal.
 
+## VNC server
+- Enabling (if it is not on already): `vncserver -localhost no -geometry 1280x960 -depth 24`
 
+- List sessions: `vncserver -list`
+
+- Kill all instances: `vncserver -kill :*` or just kill a specific instance: `vncserver -kill :1`
 
 ## Softwares used (from Hector's paper):
 
@@ -117,6 +122,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Documentation for the VCF format](http://samtools.github.io/hts-specs/VCFv4.3.pdf)
 
+- [GATK test data](https://s3.amazonaws.com/gatk-test-data/gatk-test-data-readme.html)
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
@@ -144,3 +151,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/4/2020) Found out that indeed the files were incompletely uploaded. Also found that the storage might not be enough for all our data. 
 - (11/5/2020) Janice contacted the OIT people about adding more storage and they got us some free storage using CIFS through Duke Data Commons.
 - (11/6/2020) Enabled auto mounting the data commons storage by following this [tutorial](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/) editing the `/etc/fstab`. The 1st, 2nd and 3rd storage scratch spaces are mounted to `/dew-lover/mount/1`, `2` and `3` respectively.
+- (11/13/2020) Followed [this tutorial](https://www.teknotut.com/en/install-vnc-server-with-gnome-display-on-ubuntu-18-04/) to install VNC and a desktop environment
