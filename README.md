@@ -127,8 +127,8 @@ This repository will be kept public so that anyone who needs it can find it.
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
-- [ ] Mark all the "fishy" rows in zip.xlsx and upload to server
-- [ ] Figure out how to use IGB or Tablet on server
+- [x] Mark all the "fishy" rows in zip.xlsx and upload to server
+- [x] Figure out how to use IGB or Tablet on server
 - [ ] Finish the execution of PAS
 - [ ] Create script to execute everything (input: output file name, read1, read2, reference) (delete the sam file after creating the bam file)
 - [ ] Find dummy data for the script
