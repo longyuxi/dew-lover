@@ -119,9 +119,13 @@ This repository will be kept public so that anyone who needs it can find it.
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
-- [ ] Research the zip.xlsx file especially.
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
-- [ ] Research what every output is.
+- [ ] Mark all the "fishy" rows in zip.xlsx and upload to server
+- [ ] Figure out how to use IGB or Tablet on server
+- [ ] Finish the execution of PAS
+- [ ] Create script to execute everything (input: output file name, read1, read2, reference) (delete the sam file after creating the bam file)
+- [ ] Find dummy data for the script
+- [ ] Program that highlights odd columns
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
