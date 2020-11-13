@@ -16,7 +16,18 @@ usage()
     echo -e "This will write files data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*"
 }
 
+# Cheks if any of the critical inputs are not specified
+input_check()
+{
+    if [ -z "$REFERENCE_FILE" ] || [ -z "$READ1" ] || \
+        [ -z "$READ2" ] || [ -z "$OUTPUT_PREFIX" ]; then
+        echo "Critical inputs not specified"
+        exit 1
+    fi
+}
 
+#### Main
+# Read inputs
 while [ "$1" != "" ]; do
     case $1 in 
         --reference )   shift
@@ -40,3 +51,4 @@ while [ "$1" != "" ]; do
     shift
 done
 
+input_check
