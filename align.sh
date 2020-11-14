@@ -4,10 +4,13 @@
 # sample command: bash align.sh --read1 data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz --read2 data/Raw_Data/LE-Gal4_S11_L002_R1_002.fastq.gz --reference data/Alignments/whole_genome.fna --output-prefix data/Alignments/PAS-Gal4
 # Expected files written: data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*
 
-## Commands that will be run from this input in sequence...ha that's a pun!:
-# /dew-lover/tools/bwa-0.7.17/bwa index whole_genome.fna
-# /dew-lover/tools/samtools-1.11/samtools faidx whole_genome.fna
-# java -jar /dew-lover/tools/picard.jar CreateSequenceDictionary  REFERENCE=whole_genome.fna  OUTPUT=whole_genome.dict
+##### Commands that will be run from this input in sequence...ha that's a pun!:
+# /dew-lover/tools/bwa-0.7.17/bwa index data/Alignments/whole_genome.fna
+### Creates whole_genome.fna.amb whole_genome.fna.ann whole_genome.fna.bwt whole_genome.fna.pac whole_genome.fna.sa
+# /dew-lover/tools/samtools-1.11/samtools faidx data/Alignments/whole_genome.fna
+### Creates whole_genome.fna.fai
+# java -jar /dew-lover/tools/picard.jar CreateSequenceDictionary  REFERENCE=data/Alignments/whole_genome.fna  OUTPUT=data/Alignments/whole_genome.dict
+### Creates whole_genome.dict
 # /dew-lover/tools/bwa-0.7.17/bwa mem whole_genome.fna in1=data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz in2=data/Raw_Data/LE-Gal4_S11_L002_R1_002.fastq.gz > data/Alignments/PAS-Gal4.sam
 # /dew-lover/tools/samtools-1.11/samtools view -S -b data/Alignments/PAS-Gal4.sam > data/Alignments/PAS-Gal4.bam
 # /dew-lover/tools/samtools-1.11/samtools sort data/Alignments/PAS-Gal4.bam -o data/Alignments/PAS-Gal4_sorted.bam
@@ -17,6 +20,7 @@ REFERENCE_FILE=
 READ1=
 READ2=
 OUTPUT_PREFIX=
+NUMBER_OF_THREADS=
 #### Functions
 usage()
 {
@@ -52,6 +56,8 @@ while [ "$1" != "" ]; do
         --output-prefix)    shift
                             OUTPUT_PREFIX="$1"
                             ;;
+        -t | --threads) shift
+                        NUMBER_OF_THREADS=$1
         -h | --help)    usage
                         exit
                         ;;
