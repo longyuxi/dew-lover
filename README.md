@@ -124,6 +124,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [GATK test data](https://s3.amazonaws.com/gatk-test-data/gatk-test-data-readme.html)
 
+- [Parameter expansion in BASH](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
