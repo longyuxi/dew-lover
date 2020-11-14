@@ -15,7 +15,7 @@
 ### Creates whole_genome.dict
 ##
 ## Alignment
-# /dew-lover/tools/bwa-0.7.17/bwa mem whole_genome.fna in1=data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz in2=data/Raw_Data/LE-Gal4_S11_L002_R1_002.fastq.gz > data/Alignments/PAS-Gal4.sam
+# /dew-lover/tools/bwa-0.7.17/bwa mem data/Alignments/whole_genome.fna in1=data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz in2=data/Raw_Data/LE-Gal4_S11_L002_R1_002.fastq.gz > data/Alignments/PAS-Gal4.sam
 # /dew-lover/tools/samtools-1.11/samtools view -S -b data/Alignments/PAS-Gal4.sam > data/Alignments/PAS-Gal4.bam
 # /dew-lover/tools/samtools-1.11/samtools sort data/Alignments/PAS-Gal4.bam -o data/Alignments/PAS-Gal4_sorted.bam
 # /dew-lover/tools/samtools-1.11/samtools index data/Alignments/PAS-Gal4_sorted.bam
@@ -24,12 +24,12 @@ REFERENCE_FILE=
 READ1=
 READ2=
 OUTPUT_PREFIX=
-NUMBER_OF_THREADS=
+NUMBER_OF_THREADS=3
 #### Functions
 usage()
 {
-    echo -e "Usage: bash align.sh --read1 ... --read2 ... --reference ... --output-prefix ..."
-    echo -e "Example command: bash align.sh --read1 data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz --read2 data/Raw_Data/LE-Gal4_S11_L002_R1_002.fastq.gz --reference data/Alignments/whole_genome.fna --output-prefix data/Alignments/PAS-Gal4"
+    echo -e "Usage: bash align.sh --read1 ... --read2 ... --reference ... --output-prefix ... --threads ..."
+    echo -e "Example command: bash align.sh --read1 data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz --read2 data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq.gz --reference data/Alignments/whole_genome.fna --output-prefix data/Alignments/LE-Gal4"
     echo -e "This will write files data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*"
 }
 
@@ -43,20 +43,23 @@ input_check()
         exit 1
     fi
 
-    # Checks if the reference file name has an extension, otherwise my potato code might not run
+    # Checks if the reference file name has an extension, otherwise my potato code might not run. This conditional checks for it
+    # If input directory contains dots,  my potato code might also not run. This conditional doesn't check for it
     if [[ ! $REFERENCE_FILE =~ [.][0-9a-zA-Z]+ ]]; then
         echo "Please add an extension to the reference file"
         exit 1
     fi
 
-    # If input directory contains dots, this will also not run
+    # Check if NUMBER_OF_THREADS is an integer
+    re='^[0-9]+$'
+    if ! [[ $NUMBER_OF_THREADS =~ $re ]] ; then
+        echo "error: Number of threads is not a number" >&2; exit 1
+    fi
 
 }
 
 create_reference_files()
 {
-# /dew-lover/tools/bwa-0.7.17/bwa index data/Alignments/whole_genome.fna
-### Creates whole_genome.fna.amb whole_genome.fna.ann whole_genome.fna.bwt whole_genome.fna.pac whole_genome.fna.sa
     if [ -e "$REFERENCE_FILE.amb" ]; then
         echo "$REFERENCE_FILE.amb exists"
     else
@@ -80,6 +83,23 @@ create_reference_files()
 
 }
 
+generate_sam()
+{
+    echo "Generating SAM..."
+    /dew-lover/tools/bwa-0.7.17/bwa mem -t $NUMBER_OF_THREADS "$REFERENCE_FILE" "$READ1" "$READ2" > "$OUTPUT_PREFIX.sam"
+}
+
+generate_bam_from_sam()
+{
+    echo "Generating BAM from SAM..."
+    /dew-lover/tools/samtools-1.11/samtools view -@ $NUMBER_OF_THREADS -S -b "$OUTPUT_PREFIX.sam" > "$OUTPUT_PREFIX.bam"
+    /dew-lover/tools/samtools-1.11/samtools sort -@ $NUMBER_OF_THREADS "${OUTPUT_PREFIX}.bam" -o "${OUTPUT_PREFIX}_sorted.bam"
+    /dew-lover/tools/samtools-1.11/samtools index "${OUTPUT_PREFIX}_sorted.bam"
+
+    # echo "Removing original SAM file"
+    # rm "$OUTPUT_PREFIX.sam"
+    # echo "Removed original SAM file"
+}
 
 #### Main
 # Read inputs
@@ -111,3 +131,5 @@ done
 
 input_check
 create_reference_files
+# generate_sam
+generate_bam_from_sam
