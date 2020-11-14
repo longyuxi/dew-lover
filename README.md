@@ -126,6 +126,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Parameter expansion in BASH](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
 
+- [Reading parameters passed to a script](https://linuxcommand.org/lc3_wss0120.php)
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
@@ -154,3 +156,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/5/2020) Janice contacted the OIT people about adding more storage and they got us some free storage using CIFS through Duke Data Commons.
 - (11/6/2020) Enabled auto mounting the data commons storage by following this [tutorial](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/) editing the `/etc/fstab`. The 1st, 2nd and 3rd storage scratch spaces are mounted to `/dew-lover/mount/1`, `2` and `3` respectively.
 - (11/13/2020) Followed [this tutorial](https://www.teknotut.com/en/install-vnc-server-with-gnome-display-on-ubuntu-18-04/) to install VNC and a desktop environment
+- (11/14/2020) Made a copy of the BAM and SAM files in mount/2
