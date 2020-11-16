@@ -28,7 +28,7 @@ NUMBER_OF_THREADS=3
 #### Functions
 usage()
 {
-    echo -e "Usage: bash align.sh --read1 ... --read2 ... --reference ... --output-prefix ... --threads ..."
+    echo -e "Usage: bash align.sh --read1 ... --read2 ... --reference ... --output-prefix ... [--threads ...]"
     echo -e "Example command: bash align.sh --read1 data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz --read2 data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq.gz --reference data/Alignments/whole_genome.fna --output-prefix data/Alignments/LE-Gal4"
     echo -e "This will write files data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*"
 }
@@ -96,9 +96,9 @@ generate_bam_from_sam()
     /dew-lover/tools/samtools-1.11/samtools sort -@ $NUMBER_OF_THREADS "${OUTPUT_PREFIX}.bam" -o "${OUTPUT_PREFIX}_sorted.bam"
     /dew-lover/tools/samtools-1.11/samtools index "${OUTPUT_PREFIX}_sorted.bam"
 
-    # echo "Removing original SAM file"
-    # rm "$OUTPUT_PREFIX.sam"
-    # echo "Removed original SAM file"
+    echo "Removing original SAM file"
+    rm "$OUTPUT_PREFIX.sam"
+    echo "Removed original SAM file"
 }
 
 #### Main
@@ -131,5 +131,5 @@ done
 
 input_check
 create_reference_files
-# generate_sam
+generate_sam
 generate_bam_from_sam
