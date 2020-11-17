@@ -26,21 +26,35 @@ def levenshtein(a,b):
 import pysam
 samfile = pysam.AlignmentFile(filename, "rb" )
 lev_d_dictionary = {}
+depth_dictionary = {}
 current_reads = []
 
-# i = 0 # for debug purposes
+def write_current_data():
+    with open('chasm.txt', 'w') as output_file:
+        output_file.write('Read Number,Lev Distance,Read Depth,Lev D/Read Depth\n')
+        for w in sorted(lev_d_dictionary, key=lev_d_dictionary.get, reverse=True):
+            # print(w, lev_d_dictionary[w])
+            if depth_dictionary[w] != 0:
+                percentage_distance = float(lev_d_dictionary[w]/depth_dictionary[w])
+            else:
+                percentage_distance = 'n/a'
+            output_file.write(','.join((str(w), str(lev_d_dictionary[w]), str(depth_dictionary[w]), str(percentage_distance))) + '\n')
+    print("======FILE WRITTEN======")
 
+i = 0 # for debug purposes
+
+pu = samfile.pileup()
 for pileupcolumn in samfile.pileup():
     print ("\ncoverage at base %s = %s" %
            (pileupcolumn.pos, pileupcolumn.n))
     last_reads = current_reads[:]
     current_reads = []
     
-    # i += 1
-    # if i > 10:
-    #     break # for debug purposes
+
 
     for pileupread in pileupcolumn.pileups:
+    # if True:
+    #     pileupread = pileupcolumn.pileups
 
         if not pileupread.is_del and not pileupread.is_refskip:
             # query position is None if is_del or is_refskip is set.
@@ -54,10 +68,12 @@ for pileupcolumn in samfile.pileup():
     print ("Lev distance between base %s and the base before = %s" %
            (pileupcolumn.pos, lev_d))
     lev_d_dictionary[pileupcolumn.pos] = lev_d
+    depth_dictionary[pileupcolumn.pos] = pileupcolumn.n
+
+    i += 1
+    if i % 100 == 0:
+        write_current_data()
+    # if i > 1000:
+    #     break # for debug purposes
 
 samfile.close()
-
-with open('chasm.txt', 'w') as output_file:
-    for w in sorted(lev_d_dictionary, key=lev_d_dictionary.get, reverse=True):
-        print(w, lev_d_dictionary[w])
-        output_file.write(','.join((str(w), str(lev_d_dictionary[w]))) + '\n')
