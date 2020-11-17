@@ -30,9 +30,12 @@ depth_dictionary = {}
 current_reads = []
 current_read_depth = 0
 
+with open('chasm.txt', 'w') as output_file:
+    output_file.write('Read Number,Lev Distance,Read Depth of this one plus last one,Lev D/Read Depth\n')
+
+
 def write_current_data():
-    with open('chasm.txt', 'w') as output_file:
-        output_file.write('Read Number,Lev Distance,Read Depth of this one plus last one,Lev D/Read Depth\n')
+    with open('chasm.txt', 'a') as output_file:
         for w in lev_d_dictionary:
             # print(w, lev_d_dictionary[w])
             if depth_dictionary[w] != 0:
@@ -73,6 +76,8 @@ for pileupcolumn in samfile.pileup():
     i += 1
     if i % 1000 == 0:
         write_current_data()
+        lev_d_dictionary = {}
+        depth_dictionary = {}
     # if i > 1000:
     #     break # for debug purposes
 
