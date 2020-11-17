@@ -28,11 +28,12 @@ samfile = pysam.AlignmentFile(filename, "rb" )
 lev_d_dictionary = {}
 depth_dictionary = {}
 current_reads = []
+current_read_depth = 0
 
 def write_current_data():
     with open('chasm.txt', 'w') as output_file:
-        output_file.write('Read Number,Lev Distance,Read Depth,Lev D/Read Depth\n')
-        for w in sorted(lev_d_dictionary, key=lev_d_dictionary.get, reverse=True):
+        output_file.write('Read Number,Lev Distance,Read Depth of this one plus last one,Lev D/Read Depth\n')
+        for w in lev_d_dictionary:
             # print(w, lev_d_dictionary[w])
             if depth_dictionary[w] != 0:
                 percentage_distance = float(lev_d_dictionary[w]/depth_dictionary[w])
@@ -47,11 +48,11 @@ pu = samfile.pileup()
 for pileupcolumn in samfile.pileup():
     print ("\ncoverage at base %s = %s" %
            (pileupcolumn.pos, pileupcolumn.n))
+    last_read_depth = current_read_depth
+    current_read_depth = pileupcolumn.n
     last_reads = current_reads[:]
     current_reads = []
     
-
-
     for pileupread in pileupcolumn.pileups:
     # if True:
     #     pileupread = pileupcolumn.pileups
@@ -68,10 +69,9 @@ for pileupcolumn in samfile.pileup():
     print ("Lev distance between base %s and the base before = %s" %
            (pileupcolumn.pos, lev_d))
     lev_d_dictionary[pileupcolumn.pos] = lev_d
-    depth_dictionary[pileupcolumn.pos] = pileupcolumn.n
-
+    depth_dictionary[pileupcolumn.pos] = last_read_depth + current_read_depth
     i += 1
-    if i % 100 == 0:
+    if i % 1000 == 0:
         write_current_data()
     # if i > 1000:
     #     break # for debug purposes
