@@ -137,8 +137,11 @@ This repository will be kept public so that anyone who needs it can find it.
 - [x] Create script to execute everything (input: output file name, read1, read2, reference) (delete the sam file after creating the bam file)
 - [ ] Program that highlights odd columns
 - [ ] Something around 220,000 is weird
-- [ ] 114,279
-- [ ] 123,373
+- [ ] 114279
+- [ ] 123373
+- [ ] 2803637
+- [ ] 1040981 Probably an insertion
+- [ ] 1073959
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
