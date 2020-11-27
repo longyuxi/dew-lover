@@ -141,7 +141,8 @@ This repository will be kept public so that anyone who needs it can find it.
 - [ ] 123373
 - [ ] 2803637
 - [ ] 1040981 Probably an insertion
-- [ ] 1073959
+- [ ] 107395
+- [ ] Half 
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).

@@ -1,22 +1,21 @@
 .
+├── align.sh
+├── chasm_sorted_by_distance.csv
+├── chasm_sorted_by_ratio.csv
+├── chasm.txt
 ├── data
-│   ├── Alignments
-│   │   ├── LE-Gal4.bam
-│   │   ├── LE-Gal4.sam
-│   │   ├── whole_genome.dict
-│   │   ├── whole_genome.fna
-│   │   ├── whole_genome.fna.amb
-│   │   ├── whole_genome.fna.ann
-│   │   ├── whole_genome.fna.bwt
-│   │   ├── whole_genome.fna.fai
-│   │   ├── whole_genome.fna.pac
-│   │   ├── whole_genome.fna.sa
-│   │   └── zip.xlsx
 │   ├── Raw_Data
 │   │   ├── LE-Gal4_S11_L002_R1_001.fastq.gz
 │   │   ├── LE-Gal4_S11_L002_R2_001.fastq.gz
 │   │   ├── PAS-Gal4_S12_L002_R1_001.fastq.gz
-│   │   └── PAS-Gal4_S12_L002_R2_001.fastq.gz
+│   │   ├── PAS-Gal4_S12_L002_R2_001.fastq.gz
+│   │   ├── zip-14b_S5_L002_R1_001.fastq.gz
+│   │   ├── zip-14b_S5_L002_R2_001.fastq.gz
+│   │   ├── zip1_6_S2_L002_R1_001.fastq.gz
+│   │   ├── zip-3_12_S3_L002_R1_001.fastq.gz
+│   │   ├── zip-3_12_S3_L002_R2_001.fastq.gz
+│   │   ├── zip-3_9_S4_L002_R1_001.fastq.gz
+│   │   └── zip-3_9_S4_L002_R2_001.fastq.gz
 │   ├── ref
 │   │   ├── genome
 │   │   │   └── 1
@@ -79,13 +78,63 @@
 │       ├── vcfheader.vcf
 │       └── vidmap.json
 ├── data_file_tree.txt
+├── experimenting-notebook.ipynb
 ├── generate_file_tree.sh
+├── identify-chasm.py
 ├── LICENSE
 ├── mount
 │   ├── 1
-│   │   ├── test2.txt
-│   │   └── test.txt
+│   │   └── data
+│   │       └── Alignments
+│   │           ├── Gal4-ref.dict
+│   │           ├── Gal4-ref.fasta
+│   │           ├── Gal4-ref.fasta.amb
+│   │           ├── Gal4-ref.fasta.ann
+│   │           ├── Gal4-ref.fasta.bwt
+│   │           ├── Gal4-ref.fasta.fai
+│   │           ├── Gal4-ref.fasta.pac
+│   │           ├── Gal4-ref.fasta.sa
+│   │           ├── LE-Gal4-aligned-to-Gal4.bam
+│   │           ├── LE-Gal4-aligned-to-Gal4_sorted.bam
+│   │           ├── LE-Gal4-aligned-to-Gal4_sorted.bam.bai
+│   │           ├── LE-Gal4.bam
+│   │           ├── LE-Gal4_onepercent.sam
+│   │           ├── LE-Gal4_pileup.pup
+│   │           ├── LE-Gal4.sam
+│   │           ├── LE-Gal4_sorted.bam
+│   │           ├── LE-Gal4_sorted.bam.bai
+│   │           ├── PAS-Gal4.bam
+│   │           ├── PAS-Gal4.sam
+│   │           ├── PAS-Gal4_sorted.bam
+│   │           ├── PAS-Gal4_sorted.bam.bai
+│   │           ├── whole_genome.dict
+│   │           ├── whole_genome.fna
+│   │           ├── whole_genome.fna.amb
+│   │           ├── whole_genome.fna.ann
+│   │           ├── whole_genome.fna.bwt
+│   │           ├── whole_genome.fna.fai
+│   │           ├── whole_genome.fna.pac
+│   │           ├── whole_genome.fna.sa
+│   │           └── zip.xlsx
 │   ├── 2
+│   │   ├── chasm.txt
+│   │   ├── identify-chasm.py
+│   │   ├── LE-Gal4.bam
+│   │   ├── LE-Gal4.sam
+│   │   ├── LE-Gal4_sorted.bam
+│   │   ├── LE-Gal4_sorted.bam.bai
+│   │   ├── PAS-Gal4.bam
+│   │   ├── PAS-Gal4.sam
+│   │   ├── PAS-Gal4_sorted.bam
+│   │   ├── PAS-Gal4_sorted.bam.bai
+│   │   ├── whole_genome.dict
+│   │   ├── whole_genome.fna
+│   │   ├── whole_genome.fna.amb
+│   │   ├── whole_genome.fna.ann
+│   │   ├── whole_genome.fna.bwt
+│   │   ├── whole_genome.fna.fai
+│   │   ├── whole_genome.fna.pac
+│   │   └── whole_genome.fna.sa
 │   └── 3
 ├── README.md
 └── tools
@@ -6434,4 +6483,4 @@
         ├── version.h
         └── version.sh
 
-265 directories, 6169 files
+266 directories, 6217 files
