@@ -128,7 +128,7 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Reading parameters passed to a script](https://linuxcommand.org/lc3_wss0120.php)
 
-- [Changing the defaul installation library in R](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library)c
+- [Changing the defaul installation library in R](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -166,3 +166,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/13/2020) Followed [this tutorial](https://www.teknotut.com/en/install-vnc-server-with-gnome-display-on-ubuntu-18-04/) to install VNC and a desktop environment
 - (11/14/2020) Made a copy of the BAM and SAM files in mount/2
 - (11/30/2020) Installed RStudio server, which can be visited at {server's current address}:8787
+- (11/30/2020) Added some lines to ~/.Rprofile following [this tutorial](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library) to set a default library path.
