@@ -4,3 +4,4 @@ mount/*
 .vscode
 chasm_sorted_by_distance.csv
 chasm*
+r-library

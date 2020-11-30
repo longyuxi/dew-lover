@@ -128,6 +128,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Reading parameters passed to a script](https://linuxcommand.org/lc3_wss0120.php)
 
+- [Changing the defaul installation library in R](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library)c
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
