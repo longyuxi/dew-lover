@@ -163,3 +163,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/6/2020) Enabled auto mounting the data commons storage by following this [tutorial](https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/) editing the `/etc/fstab`. The 1st, 2nd and 3rd storage scratch spaces are mounted to `/dew-lover/mount/1`, `2` and `3` respectively.
 - (11/13/2020) Followed [this tutorial](https://www.teknotut.com/en/install-vnc-server-with-gnome-display-on-ubuntu-18-04/) to install VNC and a desktop environment
 - (11/14/2020) Made a copy of the BAM and SAM files in mount/2
+- (11/30/2020) Installed RStudio server, which can be visited at {server's current address}:8787
