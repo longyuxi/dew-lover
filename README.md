@@ -172,3 +172,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/14/2020) Made a copy of the BAM and SAM files in mount/2
 - (11/30/2020) Installed RStudio server, which can be visited at {server's current address}:8787
 - (11/30/2020) Added some lines to ~/.Rprofile following [this tutorial](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library) to set a default library path.
+- (12/2/2020) Installed anaconda to /dew-lover/anaconda3
