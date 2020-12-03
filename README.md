@@ -101,6 +101,9 @@ This repository will be kept public so that anyone who needs it can find it.
 - `command > /dev/null 2>&1 &`: redirect stdout to `/dev/null` and `stderr` to stdout, and runs `command` in the background
 - `vim`: best text editor (use `vimtutor` to learn)
 - `screen`: opens an alternate terminal "screen" that functions exactly like what you would expect for a screen ([intro](https://linuxize.com/post/how-to-use-linux-screen/)) ([how to kill a screen session](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)).
+
+- `${progSamtools} view -b -f 4 ${mappedAll[i]} > ${unmapped[i]}` # output all those "read unmapped" to unmapped[]
+
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - `[Ctrl + K] + V` in VS Code to show Markdown preview after installing the extensions Markdown All in One and Markdown Preview enhanced
 - Using the remote host feature on VS code
@@ -129,6 +132,8 @@ This repository will be kept public so that anyone who needs it can find it.
 - [Reading parameters passed to a script](https://linuxcommand.org/lc3_wss0120.php)
 
 - [Changing the defaul installation library in R](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library)
+
+- [The FLAG field in SAM files explained](https://broadinstitute.github.io/picard/explain-flags.html)
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
