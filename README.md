@@ -173,3 +173,4 @@ This repository will be kept public so that anyone who needs it can find it.
 - (11/30/2020) Installed RStudio server, which can be visited at {server's current address}:8787
 - (11/30/2020) Added some lines to ~/.Rprofile following [this tutorial](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library) to set a default library path.
 - (12/2/2020) Installed anaconda to /dew-lover/anaconda3
+- (12/3/2020) Downloaded a [Docker image](https://hub.docker.com/r/pegi3s/soapdenovo2/), which should allow me to use SOAPdenovo2
