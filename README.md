@@ -135,6 +135,38 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [The FLAG field in SAM files explained](https://broadinstitute.github.io/picard/explain-flags.html)
 
+# Commands executed for the reference guided de novo
+
+- To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectINsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
+
+- Exporting unmapped reads from all sorted reads: `tools/samtools-1.11/samtools view -b -f 4 mount/1/data/Alignments/LE-Gal4_sorted.bam > mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam`
+
+- Exporting all those "read paired" and "mate unmapped" from the previous reads: `tools/samtools-1.11/samtools view -b -f 9 mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam > mount/1/data/Alignments/LE-Gal4_sorted_unmapped_pair.bam`
+
+- Converting the unmappeed reads to fastq: `java -jar tools/picard.jar SamToFastq INPUT=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq SECOND_END_FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq`
+
+- De Novo assembly of the unmapped reads `SOAPdenovo-63mer all -s mount/1/data/Alignments/*.config -o mount/1/data/Alignments/LE-Gal4_denovo -K 63` where config is
+
+```
+#maximal read length
+max_rd_len=150
+[LIB]
+#average insert size of the library
+avg_ins=343
+#if sequences are forward-reverse of reverse-forward
+reverse_seq=0
+#in which part(s) the reads are used (only contigs, only scaffolds, both contigs and scaffolds, only gap closure)
+asm_flags=3
+#in which order the reads are used while scaffolding
+rank=1
+#minimum aligned length to contigs for a reliable read location (at least 32 for short insert size)
+map_len=32
+#paired-end fastq files, read 1 file should always be followed by read 2 file
+q1=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq
+q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
+```
+
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
