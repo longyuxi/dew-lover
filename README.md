@@ -178,6 +178,12 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 
 - Trimming down the scaffolds: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_denovo.scafSeq -o mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_scafSeq.fa -length 200`
 
+# BLAST results:
+(can be found at `data/blast/`)
+- LE-Gal4: 2L 19865863 to 19870949
+
+- PAS-Gal4: ??
+
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
@@ -217,3 +223,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/2/2020) Installed anaconda to /dew-lover/anaconda3
 - (12/3/2020) Downloaded a [Docker image](https://hub.docker.com/r/pegi3s/soapdenovo2/), which should allow me to use SOAPdenovo2
 - (12/4/2020) Installed `megahit` and `SOAPdenovo` through conda
+- (12/5/2020) Ran de novo assebmlies on LE-Gal4 and PAS-Gal4 with megahit. They have shown promising results. 
