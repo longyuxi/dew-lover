@@ -78,6 +78,10 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [SAMTools](http://www.htslib.org/)
 
+- [SOAPdenovo2](https://github.com/aquaskyline/SOAPdenovo2)
+
+- [MEGAHIT](https://academic.oup.com/bioinformatics/article/31/10/1674/177884)
+
 
 ## Important commands:
 - Run GATK Docker image: `docker run -it broadinstitute/gatk`
@@ -137,13 +141,13 @@ This repository will be kept public so that anyone who needs it can find it.
 
 # Commands executed for the reference guided de novo
 
-- To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectINsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
+- To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
 
 - Exporting unmapped reads from all sorted reads: `tools/samtools-1.11/samtools view -b -f 4 mount/1/data/Alignments/LE-Gal4_sorted.bam > mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam`
 
 - Exporting all those "read paired" and "mate unmapped" from the previous reads: `tools/samtools-1.11/samtools view -b -f 9 mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam > mount/1/data/Alignments/LE-Gal4_sorted_unmapped_pair.bam`
 
-- Converting the unmappeed reads to fastq: `java -jar tools/picard.jar SamToFastq INPUT=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.bam FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq SECOND_END_FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq`
+- Converting the unmappeed reads to fastq: `java -jar tools/picard.jar SamToFastq INPUT=mount/1/data/Alignments/LE-Gal4_sorted_unmapped_pair.bam FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq SECOND_END_FASTQ=mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq`
 
 - De Novo assembly of the unmapped reads `SOAPdenovo-63mer all -s mount/1/data/Alignments/*.config -o mount/1/data/Alignments/LE-Gal4_denovo -K 63` where config is
 
@@ -166,11 +170,17 @@ q1=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq
 q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 ```
 
+- Aligning with Megahit: `megahit -1 mount/1/data/Alignments/LE-Gal4_sorted_unmapped.1.fastq -2 mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq -o mount/1/data/Alignments/LE-Gal4_megahit_denovo`
+
+- Exporting fastg graph with megahit-toolkit: `megahit_toolkit contig2fastg 141 mount/1/data/Alignments/LE-Gal4_megahit_denovo/intermediate_contigs/k141.contigs.fa > mount/1/data/Alignments/LE-Gal4_megahit_denovo/k141.fastg`
+
+- Trimming down the exported sequences: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_megahit_denovo/final.contigs.fa -length 500 -o mount/1/data/Alignments/LE-Gal4_megahit_denovo/final_500.contigs.fa`
+
+- Trimming down the scaffolds: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_denovo.scafSeq -o mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_scafSeq.fa -length 200`
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
-- [x] Mark all the "fishy" rows in zip.xlsx and upload to server
 - [x] Figure out how to use IGB or Tablet on server
 - [x] Finish the execution of PAS
 - [x] Create script to execute everything (input: output file name, read1, read2, reference) (delete the sam file after creating the bam file)
@@ -206,3 +216,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (11/30/2020) Added some lines to ~/.Rprofile following [this tutorial](https://www.accelebrate.com/library/how-to-articles/r-rstudio-library) to set a default library path.
 - (12/2/2020) Installed anaconda to /dew-lover/anaconda3
 - (12/3/2020) Downloaded a [Docker image](https://hub.docker.com/r/pegi3s/soapdenovo2/), which should allow me to use SOAPdenovo2
+- (12/4/2020) Installed `megahit` and `SOAPdenovo` through conda
