@@ -139,6 +139,8 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [The FLAG field in SAM files explained](https://broadinstitute.github.io/picard/explain-flags.html)
 
+- [Read Groups](https://gatk.broadinstitute.org/hc/en-us/articles/360035890671?id=6472)
+
 # Commands executed for the reference guided de novo
 
 - To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`

@@ -33,7 +33,7 @@ usage()
     echo -e "This will write files data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*"
 }
 
-# Cheks if any of the critical inputs are not specified
+# Checks if any of the critical inputs are not specified
 input_check()
 {
     if [ -z "$REFERENCE_FILE" ] || [ -z "$READ1" ] || \
@@ -99,6 +99,10 @@ generate_bam_from_sam()
     echo "Removing original SAM file"
     rm "$OUTPUT_PREFIX.sam"
     echo "Removed original SAM file"
+
+    echo "Removing unsorted BAM file"
+    rm "$OUTPUT_PREFIX.bam"
+    echo "Removed unsorted BAM file"
 }
 
 #### Main
