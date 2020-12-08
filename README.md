@@ -141,6 +141,16 @@ This repository will be kept public so that anyone who needs it can find it.
 
 - [Read Groups](https://gatk.broadinstitute.org/hc/en-us/articles/360035890671?id=6472)
 
+- [GNU Parallel](https://www.gnu.org/software/parallel/parallel_tutorial.html). Using parallel: 
+```sh
+if [[ -f command_file.tmp ]] ; then rm command_file.tmp ; fi
+
+for ... in ... ; do ; echo ... >> command_file ; done
+
+time parallel --eta < command_file.tmp
+```
+
+
 # Commands executed for the reference guided de novo
 
 - To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
@@ -180,11 +190,38 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 
 - Trimming down the scaffolds: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_denovo.scafSeq -o mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_scafSeq.fa -length 200`
 
-# BLAST results:
-(can be found at `data/blast/`)
-- LE-Gal4: 2L 19865863 to 19870949
+# Practice for discovering the location of Gal4
 
-- PAS-Gal4: ??
+1. De novo assemble the reads with `megahit`. Megahit only takes .fastq files so the .gz files need to be decompressed with `gunzip -k`.
+
+2. Search the contigs to find the Gal4 sequence.
+
+3. BLAST the sequence before the Gal4 sequence on the *Drosophila* genome through [NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROG_DEF=blastn&BLAST_PROG_DEF=megaBlast&BLAST_SPEC=OGP__7227__9554) 
+
+
+## BLAST results:
+(can be found at `data/blast/`)
+- The sequence preceding LE-Gal4: 
+    - very good match at 2L 19865863 to 19870949
+    - and multiple chunks in 3R??
+        - Range 1: 8293426 to 8293472
+        - Range 2: 8328274 to 8328320
+        - Range 3: 8331557 to 8331603
+        - Range 4: 8334840 to 8334886
+        - Range 5: 7782176 to 7782221
+        - Range 6: 7784301 to 7784346
+
+
+- The sequence preceding PAS-Gal4:
+    - match for a short bit at 2L 15320802 to 15320998
+    - multiple chunks in 3R too
+        - Range 1: 8328188 to 8328320
+        - Range 2: 8331471 to 8331603
+        - Range 3: 8334754 to 8334886
+        - Range 4: 8293426 to 8293558
+        - Range 5: 7784215 to 7784346
+        - Range 6: 7782176 to 7782307
+        - Range 7: 8303146 to 8303254
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -226,3 +263,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/3/2020) Downloaded a [Docker image](https://hub.docker.com/r/pegi3s/soapdenovo2/), which should allow me to use SOAPdenovo2
 - (12/4/2020) Installed `megahit` and `SOAPdenovo` through conda
 - (12/5/2020) Ran de novo assebmlies on LE-Gal4 and PAS-Gal4 with megahit. They have shown promising results. 
+- (12/7/2020) Downloaded GATK to tools

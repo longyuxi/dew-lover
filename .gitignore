@@ -7,3 +7,4 @@ chasm*
 r-library
 .RData
 anaconda3
+tools/gatk*
