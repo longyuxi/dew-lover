@@ -150,6 +150,9 @@ for ... in ... ; do ; echo ... >> command_file ; done
 time parallel --eta < command_file.tmp
 ```
 
+- [FASTG file format specification](http://fastg.sourceforge.net/FASTG_Spec_v1.00.pdf)
+
+- [A collection of sites for handling GenBank formats](https://molbiol-tools.ca/Convert.htm)
 
 # Commands executed for the reference guided de novo
 
@@ -202,18 +205,18 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
-    - very good match at 2L 19865863 to 19870949
-    - and multiple chunks in 3R??
+    - very good match at 2L 19865863 to 19870949, which is located within the gene [*sick*](http://flybase.org/reports/FBgn0263873)
+    - and multiple chunks in 3R?? (repeated chunks)
         - Range 1: 8293426 to 8293472
         - Range 2: 8328274 to 8328320
         - Range 3: 8331557 to 8331603
         - Range 4: 8334840 to 8334886
-        - Range 5: 7782176 to 7782221
+        - Range 5: 7782176 to 7782221 ("uncharacterized protein")
         - Range 6: 7784301 to 7784346
 
 
 - The sequence preceding PAS-Gal4:
-    - match for a short bit at 2L 15320802 to 15320998
+    - match for a short bit at 2L 15320802 to 15320998 (nothing)
     - multiple chunks in 3R too
         - Range 1: 8328188 to 8328320
         - Range 2: 8331471 to 8331603
@@ -222,6 +225,37 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
         - Range 5: 7784215 to 7784346
         - Range 6: 7782176 to 7782307
         - Range 7: 8303146 to 8303254
+
+## LE
+-  Sick gene in leading edge dorsal closure: https://insitu.fruitfly.org/insitu_image_storage/img_dir_44/insitu44978.jpe
+
+- [Insertion plasmid](http://flybase.org/reports/FBtp0000352.html)
+
+- Look at the 3' direction of the sequence. Find the sequence further down the 3' end
+
+    - entry for the line with the 3' end of Gal4 sequence:
+    ```
+    >NODE_40089_length_8717_cov_57.0000_ID_80177:NODE_118711_length_331_cov_57.5895_ID_237421',NODE_118717_length_1293_cov_33.7014_ID_237433;
+    ```
+
+    - The nodes that follow 3' end of Gal4 sequence:
+    `NODE_118711_length_331_cov_57.5895_ID_237421'`
+    `NODE_118717_length_1293_cov_33.7014_ID_237433`
+
+- The plasmid that is used is 11,000 base pairs long, so I eyeballed the sequence about 8,000 base pairs downstream (because the Gal4 sequence is 3,000 base pairs long) and found the contig 108400.
+
+- BLAST result for contig 108400:
+
+    - 2L 19818591 to 19840659
+
+- we chopped a repeated segment in half?
+
+- Find the location of the unmatched part of the query.
+
+
+## PAS
+
+- 10,000 bp's downstream *escargot*
 
 # TODO list
 - [ ] Bring Hector on the same page in terms of using Git and GitHub
@@ -264,3 +298,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/4/2020) Installed `megahit` and `SOAPdenovo` through conda
 - (12/5/2020) Ran de novo assebmlies on LE-Gal4 and PAS-Gal4 with megahit. They have shown promising results. 
 - (12/7/2020) Downloaded GATK to tools
+- (12/7/2020) Installed GNU Parallel through conda
