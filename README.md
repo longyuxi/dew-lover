@@ -252,6 +252,9 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 
 - Find the location of the unmatched part of the query.
 
+    - Pre-plasmid sequence BLAST: 2L 19865867 to 19866718
+
+    - Post-plasmid sequence BLAST: 2L 19865197 to 19865874
 
 ## PAS
 
@@ -299,3 +302,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/5/2020) Ran de novo assebmlies on LE-Gal4 and PAS-Gal4 with megahit. They have shown promising results. 
 - (12/7/2020) Downloaded GATK to tools
 - (12/7/2020) Installed GNU Parallel through conda
+- (12/9/2020) Discussed BLAST result with Janice and Hector
