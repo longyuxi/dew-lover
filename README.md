@@ -261,19 +261,8 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - 10,000 bp's downstream *escargot*
 
 # TODO list
-- [ ] Bring Hector on the same page in terms of using Git and GitHub
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
-- [x] Figure out how to use IGB or Tablet on server
-- [x] Finish the execution of PAS
-- [x] Create script to execute everything (input: output file name, read1, read2, reference) (delete the sam file after creating the bam file)
 - [ ] Program that highlights odd columns
-- [ ] Something around 220,000 is weird
-- [ ] 114279
-- [ ] 123373
-- [ ] 2803637
-- [ ] 1040981 Probably an insertion
-- [ ] 107395
-- [ ] Half 
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
@@ -303,3 +292,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/7/2020) Downloaded GATK to tools
 - (12/7/2020) Installed GNU Parallel through conda
 - (12/9/2020) Discussed BLAST result with Janice and Hector
+- (12/16/2020) Installed `BLAST` and `bcftools` with bioconda. Deleted `tools/bcftools`.
