@@ -154,6 +154,14 @@ time parallel --eta < command_file.tmp
 
 - [A collection of sites for handling GenBank formats](https://molbiol-tools.ca/Convert.htm)
 
+- [Converting GenBank to FASTA](https://www.bioinformatics.org/sms2/genbank_fasta.html)
+
+## For the zasp alignment
+
+- [The unicycler pipeline](https://github.com/rrwick/Unicycler)
+
+- [Comparison between different long reads de novo assemblers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6966772/)
+
 # Commands executed for the reference guided de novo
 
 - To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
@@ -263,6 +271,7 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 # TODO list
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
 - [ ] Program that highlights odd columns
+- [ ] BLAST escargot sequence in PAS-Gal4 and see if it connects to the gal4. Verify the the PAS-Gal4 sequence the same way as LE-Gal4.
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
@@ -293,3 +302,5 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/7/2020) Installed GNU Parallel through conda
 - (12/9/2020) Discussed BLAST result with Janice and Hector
 - (12/16/2020) Installed `BLAST` and `bcftools` with bioconda. Deleted `tools/bcftools`.
+- (12/17/2020) Installed a lot of assemblers on bioconda
+- (12/17/2020) Installed `assembly-stats` for showing stats of fastq files
