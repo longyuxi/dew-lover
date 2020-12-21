@@ -162,6 +162,22 @@ time parallel --eta < command_file.tmp
 
 - [Comparison between different long reads de novo assemblers](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6966772/)
 
+- Wengan:
+```sh
+export WG=/dew-lover/tools/wengan-v0.2-bin-Linux/wengan.pl
+```
+```sh
+${WG} -x pacraw \
+    -a M \
+    -s /dew-lover/mount/3/Raw_Data/zaspFS__sgmca_S19_L004_R1_001.fastq.gz,/dew-lover/mount/3/Raw_Data/zaspFS__sgmca_S19_L004_R2_001.fastq.gz \
+    -l /dew-lover/mount/3/Raw_Data/fastq_runid_13041b4c83974516dbb592fc8bd06a38dfd46570.fastq.gz \
+    -p wengan_zasp \
+    -t 4 \
+    -g 180
+```
+
+- Converting final contigs to gfa: `python tools/convertToGFA.py mount/3/wengan_zasp.minia.121.contigs.fa mount/3/wengan_zasp.minia.121.contigs.gfa 121`
+
 # Commands executed for the reference guided de novo
 
 - To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
