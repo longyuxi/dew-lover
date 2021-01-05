@@ -288,6 +288,7 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
 - [ ] Program that highlights odd columns
 - [ ] BLAST escargot sequence in PAS-Gal4 and see if it connects to the gal4. Verify the the PAS-Gal4 sequence the same way as LE-Gal4.
+- [ ] Finding the quality of assembly in Wengan?
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
@@ -320,3 +321,4 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 - (12/16/2020) Installed `BLAST` and `bcftools` with bioconda. Deleted `tools/bcftools`.
 - (12/17/2020) Installed a lot of assemblers on bioconda
 - (12/17/2020) Installed `assembly-stats` for showing stats of fastq files
+- (12/21/2020) Installed `bioconvert` on conda
