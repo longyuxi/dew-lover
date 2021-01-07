@@ -217,6 +217,23 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 
 - Trimming down the scaffolds: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_denovo.scafSeq -o mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_scafSeq.fa -length 200`
 
+## Benchmarking computers with megahit:
+Using the paired reads from [Complete Genome Sequence of a 2019 Novel Coronavirus (SARS-CoV-2) Strain Isolated in Nepal](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR11177792) (3Gb of data in each fastq file), and then running `time megahit -1 WHV-Nepal-61-TW_1.fastq -2 WHV-Nepal-61-TW_2.fastq -o out`.
+
+Time on my desktop with i7-8700K:
+```
+real    14m6.986s
+user    140m29.106s
+sys     0m24.675s
+```
+
+on the Research Toolkits VM:
+```
+real    32m1.523s
+user    117m0.367s
+sys     0m22.450s
+```
+
 # Practice for discovering the location of Gal4
 
 1. De novo assemble the reads with `megahit`. Megahit only takes .fastq files so the .gz files need to be decompressed with `gunzip -k`.
