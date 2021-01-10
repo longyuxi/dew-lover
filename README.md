@@ -339,3 +339,7 @@ sys     0m22.450s
 - (12/17/2020) Installed a lot of assemblers on bioconda
 - (12/17/2020) Installed `assembly-stats` for showing stats of fastq files
 - (12/21/2020) Installed `bioconvert` on conda
+- (12/21/2020) Aligned Stephanie's zasp data *de novo* with WENGAN. The data is deposited in `mount/3`
+- (12/21/2020) Reported results of the de novo assembly with WENGAN to Stephanie and Janice. After BLASTing an arbitrary incoming and an arbitrary outgoing reads against the contigs created by WENGAN, I identified the insertion sequence (i.e. the transposable element). The results can be found at `mount/3/wengan_zasp/wengan_zasp_commented.fasta`.
+- (1/7/2020) Benchmarked the virtual machine by using MEGAHIT to align a raw sequencing data of COVID-19 downloaded from the Internet. Turns out that my PC is faster than this virtual machine. Benchmark data can be found above in the *benchmark* section.
+- (1/9/2020) Added a `methods` folder to store the methods used to get to the research results.
