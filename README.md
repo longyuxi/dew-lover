@@ -243,6 +243,13 @@ user    163m34.328s
 sys     1m29.531s
 ```
 
+on my table with i5-6300U:
+```
+real    45m52.942s
+user    167m17.734s
+sys     0m57.469s
+```
+
 # Practice for discovering the location of Gal4
 
 1. De novo assemble the reads with `megahit`. Megahit only takes .fastq files so the .gz files need to be decompressed with `gunzip -k`.
