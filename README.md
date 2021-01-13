@@ -178,7 +178,9 @@ ${WG} -x pacraw \
 
 - Converting final contigs to gfa: `python tools/convertToGFA.py mount/3/wengan_zasp.minia.121.contigs.fa mount/3/wengan_zasp.minia.121.contigs.gfa 121`
 
-# Commands executed for the reference guided de novo
+# Reference guided de novo
+
+- [Paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1911-6)
 
 - To generate insertion statistics of LE-Gal4: `java -jar tools/picard.jar CollectInsertSizeMetrics I=mount/1/data/Alignments/LE-Gal4_sorted.bam O=LE-Gal4_insert_size_metrics.txt H=LE-Gal4_insert_size_histogram.pdf`
 
@@ -302,10 +304,8 @@ sys     0m22.450s
 - 10,000 bp's downstream *escargot*
 
 # TODO list
-- [ ] Joey running a similar thing. Check his documents out. Janice is going to send them.
 - [ ] Program that highlights odd columns
 - [ ] BLAST escargot sequence in PAS-Gal4 and see if it connects to the gal4. Verify the the PAS-Gal4 sequence the same way as LE-Gal4.
-- [ ] Finding the quality of assembly in Wengan?
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
