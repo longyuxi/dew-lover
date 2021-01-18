@@ -1,5 +1,5 @@
 setwd("/dew-lover")  # working path
-coverage=read.table("mount/2/LE-Gal4_sorted.coverage", sep="\t", header=F)
+coverage=read.table("mount/1/data/Alignments/LE-Gal4_sorted.coverage", sep="\t", header=F)
 library(reshape)
 library(ggplot2)
 library(plyr)
