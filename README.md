@@ -320,6 +320,31 @@ sys     0m57.469s
 # TODO list
 - [ ] Program that highlights odd columns
 - [ ] BLAST escargot sequence in PAS-Gal4 and see if it connects to the gal4. Verify the the PAS-Gal4 sequence the same way as LE-Gal4.
+## TODO
+- Gal4: insertion: present evidence of discovery. 
+When time comes, ask for a week to prepare for presentation.
+
+- Some quality scores in the excel sheet are pretty low. 
+
+- Find which variants are interesting
+
+- Pey allele and zip allele 
+Pey alleles might have mutations outside of the Pey gene. 
+
+- Might the mutation be just outside of the exons, or outside of the gene?
+Could the Pey alleles be intronic variants?
+
+- Find data source for:
+Pey: always having 0/*
+zip 1 S1: never having mutation
+
+- Go into the alignment and find a polymorphism site on Pey 3.7 and see what is going on.
+
+- Potential plan: go into the lab and use the lab computer and use tablet
+brown rows: insertion?
+
+- challenge the original vcf workflow. try other variant calling workflow? 
+[vcf best practices](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00791-w#Fig2)
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
@@ -358,3 +383,4 @@ sys     0m57.469s
 - (1/7/2021) Benchmarked the virtual machine by using MEGAHIT to align a raw sequencing data of COVID-19 downloaded from the Internet. Turns out that my PC is faster than this virtual machine. Benchmark data can be found above in the *benchmark* section.
 - (1/9/2021) Added a `methods` folder to store the methods used to get to the research results.
 - (1/19/2021) Created a new conda environment `ref-guided-denovo` to test out the reference guided de novo assembly pipeline. Can be activated with `conda activate ref-guided-denovo`.
+- (1/22/2021) Had a meeting with Hector, where we talked about progress and anomalies in variant calling of Pey and zip.
