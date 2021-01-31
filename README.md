@@ -317,6 +317,28 @@ sys     0m57.469s
 
 - 10,000 bp's downstream *escargot*
 
+- BLAST hit of Gal4 14615+
+
+- BLASTed both the escargot and gal4 sequence. Found two hits that are next to each other, but not connected to each other. They are both led into by node 71535-. (i.e. 71535- -> 17919+, which contains escargot and 14615+, which contains gal4). 
+    - Blasting 71535- shows a hit on 2L from 15313739 to 15320942.
+    - Blasting 17919+ shows a hit on 2L from 15458354 to 15499966. 
+        - Range 1: 15458354 to 15499966
+        - Range 2: 15405321 to 15446105
+        - Range 3: 15320972 to 15360909
+        - Range 4: 15360908 to 15385578
+        - Range 5: 15514379 to 15538814
+        - Range 6: 15499999 to 15510987
+        - Range 7: 15394260 to 15405293
+        - Range 8: 15385604 to 15394223
+        - Range 9: 15453518 to 15458313
+        - Range 10: 15512320 to 15514380
+        - Range 11: 15511029 to 15512301
+        - Range 12: 15320802 to 15320974
+
+- 2L:15320942-15458354 was blasted and found scattered around the assembly. There was probably bad coverage within the region.
+
+- On the other hand, blasting the last 50 base pairs of 71535' in an intent to find why the 141-mer assembly aligned it with 17919+ and 14615+ found only one hit on 15320893 to 15320942, which is consistent with the blast result from the entire 17919+ (i.e. it is not a repeated element).
+
 # TODO list
 - [ ] Program that highlights odd columns
 - [ ] BLAST escargot sequence in PAS-Gal4 and see if it connects to the gal4. Verify the the PAS-Gal4 sequence the same way as LE-Gal4.
@@ -345,6 +367,16 @@ brown rows: insertion?
 
 - challenge the original vcf workflow. try other variant calling workflow? 
 [vcf best practices](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00791-w#Fig2)
+
+- Find flanking sequence on PAS-Gal4 like on LE-Gal4
+
+- balancer chromosome
+
+- Hetereozygous in the middle of reads?
+
+- Align to whole genome and do variant calling on region of interest
+
+- Use extended gene region
 
 # DONE list
 - (10/21/2020) Installed Docker Engine following [this link](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Added `rapiduser` to usergroup `docker`. Installed [GATK's Docker image](https://hub.docker.com/r/broadinstitute/gatk/).
