@@ -337,6 +337,8 @@ sys     0m57.469s
 
 - 2L:15320942-15458354 was blasted and found scattered around the assembly. There was probably bad coverage within the region.
 
+- BLASTing 71535- [-63:] combined with 14615+ against nt yields some interesting things. Blast result file uploaded.
+
 - On the other hand, blasting the last 50 base pairs of 71535' in an intent to find why the 141-mer assembly aligned it with 17919+ and 14615+ found only one hit on 15320893 to 15320942, which is consistent with the blast result from the entire 17919+ (i.e. it is not a repeated element).
 
 # TODO list
@@ -416,3 +418,4 @@ brown rows: insertion?
 - (1/9/2021) Added a `methods` folder to store the methods used to get to the research results.
 - (1/19/2021) Created a new conda environment `ref-guided-denovo` to test out the reference guided de novo assembly pipeline. Can be activated with `conda activate ref-guided-denovo`.
 - (1/22/2021) Had a meeting with Hector, where we talked about progress and anomalies in variant calling of Pey and zip.
+- (2/15/2021) Used Google Cloud Compute to do an assembly of the PAS data using SPADES. The output is left in `mount/3/gbucket/spades-output`
