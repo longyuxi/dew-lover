@@ -20,6 +20,11 @@
 # /dew-lover/tools/samtools-1.11/samtools sort data/Alignments/PAS-Gal4.bam -o data/Alignments/PAS-Gal4_sorted.bam
 # /dew-lover/tools/samtools-1.11/samtools index data/Alignments/PAS-Gal4_sorted.bam
 
+# software parameters
+BWA="/dew-lover/tools/bwa-0.7.17/bwa"
+SAMTOOLS="/dew-lover/tools/samtools-1.11/samtools"
+
+# running parameters
 REFERENCE_FILE=
 READ1=
 READ2=
@@ -31,6 +36,14 @@ usage()
     echo -e "Usage: bash align.sh --read1 ... --read2 ... --reference ... --output-prefix ... [--threads ...]"
     echo -e "Example command: bash align.sh --read1 data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq.gz --read2 data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq.gz --reference data/Alignments/whole_genome.fna --output-prefix data/Alignments/LE-Gal4"
     echo -e "This will write files data/Alignments/whole_genome.fna.* , data/Alignments/whole_genome.dict, data/Alignments/PAS-Gal4.*"
+}
+
+software_check()
+{
+    if [ ! -x $BWA ] || [ ! -x $SAMTOOLS ] ; then
+        echo "BWA or Samtools executable does not exist or not executable. Please specify a valid BWA or Samtools path in align.sh"
+        exit 1
+    fi
 }
 
 # Checks if any of the critical inputs are not specified
@@ -64,14 +77,14 @@ create_reference_files()
         echo "$REFERENCE_FILE.amb exists"
     else
         echo "Generating $REFERENCE_FILE.amb..."
-        /dew-lover/tools/bwa-0.7.17/bwa index "$REFERENCE_FILE"
+        $BWA index "$REFERENCE_FILE"
     fi
 
     if [ -e "$REFERENCE_FILE.fai" ]; then
         echo "$REFERENCE_FILE.fai exists"
     else
         echo "Generating $REFERENCE_FILE.fai..."
-        /dew-lover/tools/samtools-1.11/samtools faidx "$REFERENCE_FILE"
+        $SAMTOOLS faidx "$REFERENCE_FILE"
     fi
 
     if [ -e "${REFERENCE_FILE%.*}.dict" ]; then
@@ -86,15 +99,15 @@ create_reference_files()
 generate_sam()
 {
     echo "Generating SAM..."
-    /dew-lover/tools/bwa-0.7.17/bwa mem -t $NUMBER_OF_THREADS "$REFERENCE_FILE" "$READ1" "$READ2" > "$OUTPUT_PREFIX.sam"
+    $BWA mem -t $NUMBER_OF_THREADS "$REFERENCE_FILE" "$READ1" "$READ2" > "$OUTPUT_PREFIX.sam"
 }
 
 generate_bam_from_sam()
 {
     echo "Generating BAM from SAM..."
-    /dew-lover/tools/samtools-1.11/samtools view -@ $NUMBER_OF_THREADS -S -b "$OUTPUT_PREFIX.sam" > "$OUTPUT_PREFIX.bam"
-    /dew-lover/tools/samtools-1.11/samtools sort -@ $NUMBER_OF_THREADS "${OUTPUT_PREFIX}.bam" -o "${OUTPUT_PREFIX}_sorted.bam"
-    /dew-lover/tools/samtools-1.11/samtools index "${OUTPUT_PREFIX}_sorted.bam"
+    $SAMTOOLS view -@ $NUMBER_OF_THREADS -S -b "$OUTPUT_PREFIX.sam" > "$OUTPUT_PREFIX.bam"
+    $SAMTOOLS sort -@ $NUMBER_OF_THREADS "${OUTPUT_PREFIX}.bam" -o "${OUTPUT_PREFIX}_sorted.bam"
+    $SAMTOOLS index "${OUTPUT_PREFIX}_sorted.bam"
 
     echo "Removing original SAM file"
     rm "$OUTPUT_PREFIX.sam"
@@ -133,6 +146,7 @@ while [ "$1" != "" ]; do
     shift
 done
 
+software_check
 input_check
 create_reference_files
 generate_sam
