@@ -222,11 +222,18 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 ## Benchmarking computers with megahit:
 Using the paired reads from [Complete Genome Sequence of a 2019 Novel Coronavirus (SARS-CoV-2) Strain Isolated in Nepal](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR11177792) (3Gb of data in each fastq file), and then running `time megahit -1 WHV-Nepal-61-TW_1.fastq -2 WHV-Nepal-61-TW_2.fastq -o out`.
 
-Time on my desktop with i7-8700K:
+Time on my desktop with i7-8700K using WSL:
 ```
 real    14m6.986s
 user    140m29.106s
 sys     0m24.675s
+```
+
+on my desktop with i7-8700K using Ubuntu:
+```
+real	11m23.844s
+user	122m39.515s
+sys     0m15.793s
 ```
 
 on the Research Toolkits VM:
