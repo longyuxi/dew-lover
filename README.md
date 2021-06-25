@@ -219,6 +219,15 @@ q2=/dew-lover/mount/1/data/Alignments/LE-Gal4_sorted_unmapped.2.fastq
 
 - Trimming down the scaffolds: `java -jar ref-guided-de-novo/RemoveShortSeq.jar -i mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_denovo.scafSeq -o mount/1/data/Alignments/LE-Gal4_soap_denovo/LE-Gal4_scafSeq.fa -length 200`
 
+## Using the megahit de novo data:
+1. Start the VNC server using the instructions in the VNC section.
+
+2. Open up Bandage by double clicking on the executable from folder `~/bandage`
+
+3. Load the .fastg file from `/dew-lover/mount/1/data/Alignments/PAS-Gal4_complete_megahit_denovo/k141.fastg`.
+
+4. Using the BLAST panel, open up the reference file in `/dew-lover/data/ref/Gal4-ref.fasta`. In the main panel, change the display options to display around the BLAST hits. Setting the distance from BLAST hits to be 10 while using the assembly made by Megahit or 15 while using the assembly made by SPADES seems to be enough.   
+
 ## Benchmarking computers with megahit:
 Using the paired reads from [Complete Genome Sequence of a 2019 Novel Coronavirus (SARS-CoV-2) Strain Isolated in Nepal](https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR11177792) (3Gb of data in each fastq file), and then running `time megahit -1 WHV-Nepal-61-TW_1.fastq -2 WHV-Nepal-61-TW_2.fastq -o out`.
 
@@ -257,6 +266,13 @@ user    167m17.734s
 sys     0m57.469s
 ```
 
+Also, benchmarking assembling the fly genome with Megahit: `time megahit -1 1/data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq  -2 1/data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq -o 3/benchmark`
+```
+real    182m6.569s
+user    659m42.741s
+sys     1m33.144s
+```
+
 # Practice for discovering the location of Gal4
 
 1. De novo assemble the reads with `megahit`. Megahit only takes .fastq files so the .gz files need to be decompressed with `gunzip -k`.
@@ -265,6 +281,10 @@ sys     0m57.469s
 
 3. BLAST the sequence before the Gal4 sequence on the *Drosophila* genome through [NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROG_DEF=blastn&BLAST_PROG_DEF=megaBlast&BLAST_SPEC=OGP__7227__9554) 
 
+# Unbuffering Python
+
+(This isn't related to dew-lover, but I'm just leaving here since it is beneficial)
+To unbuffer the Python print statements (for e.g. when you want to see real time output when using tee `python script.py 2>&1 | tee search_output.txt`), add the line `alias python='python -u'` to .bashrc. See [this post](https://stackoverflow.com/questions/107705/disable-output-buffering) for other solutions.
 
 ## BLAST results:
 (can be found at `data/blast/`)
