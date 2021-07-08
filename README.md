@@ -286,6 +286,10 @@ sys     1m33.144s
 (This isn't related to dew-lover, but I'm just leaving here since it is beneficial)
 To unbuffer the Python print statements (for e.g. when you want to see real time output when using tee `python script.py 2>&1 | tee search_output.txt`), add the line `alias python='python -u'` to .bashrc. See [this post](https://stackoverflow.com/questions/107705/disable-output-buffering) for other solutions.
 
+### SLURM configuration file for DCC
+
+... is stored at `less /var/spool/slurmd/conf-cache/slurm.conf`
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
