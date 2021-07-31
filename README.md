@@ -281,7 +281,9 @@ sys     1m33.144s
 
 3. BLAST the sequence before the Gal4 sequence on the *Drosophila* genome through [NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROG_DEF=blastn&BLAST_PROG_DEF=megaBlast&BLAST_SPEC=OGP__7227__9554) 
 
-# Unbuffering Python
+# Little Tricks
+
+### Unbuffering Python
 
 (This isn't related to dew-lover, but I'm just leaving here since it is beneficial)
 To unbuffer the Python print statements (for e.g. when you want to see real time output when using tee `python script.py 2>&1 | tee search_output.txt`), add the line `alias python='python -u'` to .bashrc. See [this post](https://stackoverflow.com/questions/107705/disable-output-buffering) for other solutions.
@@ -289,6 +291,35 @@ To unbuffer the Python print statements (for e.g. when you want to see real time
 ### SLURM configuration file for DCC
 
 ... is stored at `less /var/spool/slurmd/conf-cache/slurm.conf`
+
+### Translating from bash commands to python
+`mkdir -p`:
+
+```
+    pathlib.Path(temp_dir).mkdir(parents=True, exist_ok=True)
+    # os.system(f"mkdir -p {temp_dir}")
+```
+
+`rm -rf`:
+
+```
+     # os.system(f'rm -rf \'{temp_dir}\'')
+     shutil.rmtree(temp_dir)
+```
+
+Finding the base directory of a folder based on where the file that was executed is:
+```
+file_path = os.path.realpath(__file__)
+base_dir = pathlib.Path(file_path).parent.parent.absolute()
+```
+
+`rm`: 
+
+```
+	# os.system(f'rm \'{temp_1}\'')
+	os.remove(temp_1)
+```
+
 
 ## BLAST results:
 (can be found at `data/blast/`)
