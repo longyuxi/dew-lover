@@ -320,6 +320,8 @@ base_dir = pathlib.Path(file_path).parent.parent.absolute()
 	os.remove(temp_1)
 ```
 
+### Reporting the GPU information:
+`/usr/local/cuda/samples/1_Utilities/deviceQuery/deviceQuery`
 
 ## BLAST results:
 (can be found at `data/blast/`)
