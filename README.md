@@ -323,6 +323,18 @@ base_dir = pathlib.Path(file_path).parent.parent.absolute()
 ### Reporting the GPU information:
 `/usr/local/cuda/samples/1_Utilities/deviceQuery/deviceQuery`
 
+### Multiprocessing
+```Python
+from multiprocessing import Pool
+
+def func(x):
+    return x*x
+
+if __name__ == '__main__':
+    with Pool(5) as p:
+        print(p.map(func, [1, 2, 3]))
+```
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
