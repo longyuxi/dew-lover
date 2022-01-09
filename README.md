@@ -273,6 +273,11 @@ user    214m44.254s
 sys     0m59.015s
 ```
 
+On 2019 16-inch macbook pro with i9:
+```
+megahit -1 WHV-Nepal-61-TW_1.fastq -2 WHV-Nepal-61-TW_2.fastq -o out  11359.30s user 43.83s system 1486% cpu 12:47.04 total
+```
+
 Also, benchmarking assembling the fly genome with Megahit: `time megahit -1 1/data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq  -2 1/data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq -o 3/benchmark`
 ```
 real    182m6.569s
