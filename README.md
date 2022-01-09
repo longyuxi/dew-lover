@@ -266,6 +266,13 @@ user    167m17.734s
 sys     0m57.469s
 ```
 
+On dcc-rescomp-26 with 78-core Xeon Gold 6252:
+```
+real    5m16.167s
+user    214m44.254s
+sys     0m59.015s
+```
+
 Also, benchmarking assembling the fly genome with Megahit: `time megahit -1 1/data/Raw_Data/LE-Gal4_S11_L002_R1_001.fastq  -2 1/data/Raw_Data/LE-Gal4_S11_L002_R2_001.fastq -o 3/benchmark`
 ```
 real    182m6.569s
