@@ -335,6 +335,9 @@ base_dir = pathlib.Path(file_path).parent.parent.absolute()
 ### Reporting the GPU information:
 `/usr/local/cuda/samples/1_Utilities/deviceQuery/deviceQuery`
 
+### Reporting usage
+`sreport cluster AccountUtilizationByUser Account=biodept Users=yl708 --tres=all Start=2019-01-01 End=2023-01-01`
+
 ### Multiprocessing
 ```Python
 from multiprocessing import Pool
