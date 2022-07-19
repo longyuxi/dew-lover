@@ -350,6 +350,9 @@ if __name__ == '__main__':
         print(p.map(func, [1, 2, 3]))
 ```
 
+### Debugging software packaged by Poetry:
+https://github.com/python-poetry/poetry/issues/5354#issuecomment-1179074941
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
