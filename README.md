@@ -295,6 +295,10 @@ sys     1m33.144s
 
 # Little Tricks
 
+### Substituting all non-English characters from input (probably copied from Microsoft Word)
+
+Regex: `[^a-zA-Z0-9 \n.?!,;:\-\)\(\{\}\[\]'"]`
+
 ### Unbuffering Python
 
 (This isn't related to dew-lover, but I'm just leaving here since it is beneficial)
