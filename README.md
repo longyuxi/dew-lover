@@ -357,6 +357,18 @@ if __name__ == '__main__':
 ### Debugging software packaged by Poetry:
 https://github.com/python-poetry/poetry/issues/5354#issuecomment-1179074941
 
+### Adding GIF to latex pdfs
+
+```
+ffmpeg -i collatz.mp4 -vf fps=1 out-%d.png
+cp out-1.png out-0.png
+```
+
+```
+\usepackage{animate}
+\animategraphics[autoplay,loop,width=\linewidth]{4}{imgs/collatz-animation/out-}{0}{60}
+```
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
