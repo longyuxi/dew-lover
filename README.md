@@ -369,6 +369,10 @@ cp out-1.png out-0.png
 \animategraphics[autoplay,loop,width=\linewidth]{4}{imgs/collatz-animation/out-}{0}{60}
 ```
 
+### Testing network capabilities
+
+[iperf](https://iperf.fr). UDP is apparently blocked on Duke's network.
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
