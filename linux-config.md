@@ -9,10 +9,10 @@ sudo update-alternatives --config editor
 
 
 
-sudo apt install net-tools
+sudo apt install -y net-tools
 ifconfig
 
-sudo apt install zsh curl git vim
+sudo apt install -y zsh curl git vim
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
@@ -31,6 +31,6 @@ chmod +x Mambaforge-Linux-x86_64.sh
 ## GHC
 
 ```
-sudo apt install build-essential curl libffi-dev libffi7 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5
+sudo apt install -y build-essential curl libffi-dev libffi7 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 ```
