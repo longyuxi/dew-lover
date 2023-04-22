@@ -373,6 +373,12 @@ cp out-1.png out-0.png
 
 [iperf](https://iperf.fr). UDP is apparently blocked on Duke's network.
 
+### Filtering out folders with non-PDB names
+
+```
+ls -l | grep -E -v '\s[0-9a-z]{4}$'
+```
+
 ## BLAST results:
 (can be found at `data/blast/`)
 - The sequence preceding LE-Gal4: 
