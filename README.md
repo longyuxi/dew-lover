@@ -308,6 +308,14 @@ To unbuffer the Python print statements (for e.g. when you want to see real time
 
 ... is stored at `less /var/spool/slurmd/conf-cache/slurm.conf`
 
+### `scancel` a lot of jobs
+
+`squeue -u $USER | grep 222 | awk '{print $1}' | xargs -n 1 scancel`
+
+### Showing overall progress on `rsync`
+
+`rsync -r --info=progress2 source destination`
+
 ### Translating from bash commands to python
 `mkdir -p`:
 
