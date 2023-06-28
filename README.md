@@ -312,6 +312,10 @@ To unbuffer the Python print statements (for e.g. when you want to see real time
 
 `squeue -u $USER | grep 222 | awk '{print $1}' | xargs -n 1 scancel`
 
+### Showing the detailed information of a job
+
+`scontrol show jobid -dd 3210855`
+
 ### Showing overall progress on `rsync`
 
 `rsync -r --info=progress2 source destination`
